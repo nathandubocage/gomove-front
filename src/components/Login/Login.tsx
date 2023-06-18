@@ -49,8 +49,12 @@ export default function Login() {
               />
             </div>
 
-            <div className="login__row login__switch">
-              <input className="login__switch" type="checkbox" id="remember" />
+            <div className="login__row">
+              {/* À transformer en composant */}
+              <label className="switch">
+                <input id="remember" type="checkbox" />
+                <span className="slider round"></span>
+              </label>
               <label htmlFor="remember">Se souvenir de moi</label>
             </div>
           </form>
