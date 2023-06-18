@@ -20,11 +20,12 @@ const Switch: React.FC<SwitchProps> = ({ initial = false, onChange, id }) => {
     <label className="switch">
       <input
         id={id}
+        className="switch__input"
         type="checkbox"
         checked={checked}
         onChange={handleToggle}
       />
-      <span className="slider round"></span>
+      <span className="switch__slider"></span>
     </label>
   );
 };

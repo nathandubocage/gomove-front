@@ -3,51 +3,45 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+  width: 48px;
+  height: 28px;
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 
-.slider {
-  cursor: pointer;
-  position: absolute;
-  inset: 0;
-  background-color: $silver-chalice;
-  transition: 0.2s all ease-in-out;
-}
+    &:checked + .switch__slider {
+      background-color: $bleached-cedar;
 
-.slider:before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  bottom: 4px;
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  transition: 0.2s all ease-in-out;
-}
+      &:before {
+        transform: translateX(16px);
+      }
+    }
 
-input:checked + .slider {
-  background-color: $bleached-cedar;
-}
+    &:focus + .switch__slider {
+      box-shadow: 0 0 1px $bleached-cedar;
+    }
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px $bleached-cedar;
-}
+  &__slider {
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    background-color: $silver-chalice;
+    border-radius: 34px;
+    transition: 0.2s all ease-in-out;
 
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      bottom: 2px;
+      width: 24px;
+      height: 24px;
+      background-color: $white;
+      border-radius: 50%;
+      transition: 0.2s all ease-in-out;
+    }
+  }
 }
