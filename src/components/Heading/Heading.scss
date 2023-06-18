@@ -1,0 +1,12 @@
+@import "../../stylesheets/variables.scss";
+
+.heading {
+  font-family: "Space Grotesk", sans-serif;
+
+  &--primary {
+    color: $bleached-cedar;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+}

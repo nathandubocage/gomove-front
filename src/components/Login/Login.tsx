@@ -1,11 +1,18 @@
 import { Fragment } from "react";
 
+import Heading from "../Heading/Heading";
+import Switch from "../Switch/Switch";
+
 import "./Login.scss";
 
 import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
 
 export default function Login() {
+  const handleSwitch = (checked: boolean) => {
+    console.log(checked);
+  };
+
   return (
     <Fragment>
       <div className="wrapper">
@@ -22,7 +29,7 @@ export default function Login() {
         </header>
 
         <section className="login">
-          <h1 className="heading heading--primary">Se connecter</h1>
+          <Heading content="Se connecter" />
 
           <form className="login__form">
             <div className="login__column">
@@ -50,12 +57,13 @@ export default function Login() {
             </div>
 
             <div className="login__row">
-              {/* À transformer en composant */}
-              <label className="switch">
-                <input id="remember" type="checkbox" />
-                <span className="slider round"></span>
+              <Switch initial={false} onChange={handleSwitch} id="remember" />
+              <label
+                className="login__label login__label--light"
+                htmlFor="remember"
+              >
+                Se souvenir de moi
               </label>
-              <label htmlFor="remember">Se souvenir de moi</label>
             </div>
           </form>
 

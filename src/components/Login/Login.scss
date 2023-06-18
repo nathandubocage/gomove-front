@@ -32,17 +32,6 @@
   }
 }
 
-.heading {
-  font-family: "Space Grotesk", sans-serif;
-
-  &--primary {
-    color: $bleached-cedar;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 36px;
-  }
-}
-
 .login {
   display: flex;
   flex-direction: column;
@@ -58,6 +47,12 @@
     font-weight: 700;
     font-family: "Space Grotesk", sans-serif;
     line-height: 15px;
+
+    &--light {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+    }
   }
 
   &__input {
@@ -116,58 +111,4 @@
     border: none;
     padding: 24px 0;
   }
-}
-
-/* --- À transformer en composant --- */
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  cursor: pointer;
-  position: absolute;
-  inset: 0;
-  background-color: $silver-chalice;
-  transition: 0.2s all ease-in-out;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  bottom: 4px;
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  transition: 0.2s all ease-in-out;
-}
-
-input:checked + .slider {
-  background-color: $bleached-cedar;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px $bleached-cedar;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
