@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
 import Heading from "../Heading/Heading";
+import Button from "../Button/Button";
 import Switch from "../Switch/Switch";
 
 import "./Login.scss";
@@ -67,7 +68,7 @@ export default function Login() {
             </div>
           </form>
 
-          <button className="button button--primary">Se connecter</button>
+          <Button content="Se connecter" />
         </section>
       </div>
     </Fragment>
