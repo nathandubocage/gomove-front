@@ -3,10 +3,38 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "MyFont";
+  font-family: "Integral CF";
   src: url("/fonts/IntegralCF-Bold.woff") format("woff");
-  font-weight: normal;
   font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("/fonts/IntegralCF-ExtraBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("/fonts/IntegralCF-DemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("/fonts/IntegralCF-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("/fonts/IntegralCF-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
 }
 
 .wrapper {
