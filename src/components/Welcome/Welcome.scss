@@ -10,15 +10,42 @@
   background-repeat: no-repeat;
   padding: 0 20px;
 
+  &__logo {
+    width: 94px;
+    height: 103px;
+    margin: 0 auto;
+  }
+
   &__heading {
+    text-align: center;
+
     &-bold {
       color: $bleached-cedar;
-      font-size: 40px;
-      font-family: "IntegralCF-Bold";
-      line-height: 48px;
+      margin-top: 42px;
+
+      span:first-child {
+        font-family: "Integral CF", sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      span:last-child {
+        display: inline-block;
+        font-family: "Integral CF", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28.8px;
+      }
     }
 
     &-light {
+      color: $bleached-cedar;
+      font-size: 20px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      line-height: 26px;
+      margin-top: 31px;
     }
   }
 
@@ -26,7 +53,14 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 20px);
     bottom: 40px;
+  }
+
+  &__login {
+    color: $bleached-cedar;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
   }
 }
