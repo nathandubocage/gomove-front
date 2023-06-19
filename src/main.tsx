@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import App from "./App.tsx";
+import Welcome from "./components/Welcome/Welcome.tsx";
 import Login from "./components/Login/Login.tsx";
 import Register from "./components/Register/Register.tsx";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/welcome",
+    element: <Welcome />,
   },
   {
     path: "/login",
