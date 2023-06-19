@@ -1,5 +1,12 @@
 import "./Heading.scss";
 
 export default function Heading(props: { content: string }) {
-  return <h1 className="heading heading--primary">{props.content}</h1>;
+  const contentHtml = props.content.replace("\n", "<br/>");
+
+  return (
+    <h1
+      className="heading heading--primary"
+      dangerouslySetInnerHTML={{ __html: contentHtml }}
+    />
+  );
 }
