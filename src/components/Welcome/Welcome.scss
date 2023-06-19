@@ -10,6 +10,10 @@
   background-repeat: no-repeat;
   padding: 0 20px;
 
+  @media screen and (min-width: $mobile-large) {
+    background-size: cover;
+  }
+
   &__logo {
     width: 94px;
     height: 103px;
