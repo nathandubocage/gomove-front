@@ -3,12 +3,12 @@ import { Fragment } from "react";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import Switch from "../Switch/Switch";
+import Input from "../Input/Input";
 
 import "./Login.scss";
 
 import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
-import Input from "../Input/Input";
 
 export default function Login() {
   const handleSwitch = (checked: boolean) => {
