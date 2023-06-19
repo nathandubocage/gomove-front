@@ -1,1 +1,15 @@
 @import "../../stylesheets/variables.scss";
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__description {
+    color: $bleached-cedar;
+    font-size: 14px;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 18px;
+    margin-top: 37px;
+  }
+}
