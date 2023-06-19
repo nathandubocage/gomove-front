@@ -38,9 +38,11 @@ export default function Register() {
                 id="name"
                 type="text"
                 placeholder="Votre nom et prénom"
-                onInputChange={() => {
+                onChange={(event) => {
+                  console.log(event);
                   console.log("Changement de valeur du nom et prénom");
                 }}
+                value=""
               />
             </div>
 
@@ -53,9 +55,11 @@ export default function Register() {
                 id="phone"
                 type="tel"
                 placeholder="00/00/00/00/00"
-                onInputChange={() => {
+                onChange={(event) => {
+                  console.log(event);
                   console.log("Changement de valeur du téléphone");
                 }}
+                value=""
               />
             </div>
 
@@ -68,7 +72,9 @@ export default function Register() {
                 id="email"
                 type="email"
                 placeholder="Votre adresse e-mail"
-                onInputChange={() => {
+                value=""
+                onChange={(event) => {
+                  console.log(event);
                   console.log("Changement de valeur de l'e-mail");
                 }}
               />
@@ -83,7 +89,9 @@ export default function Register() {
                 id="password"
                 type="password"
                 placeholder="Votre mot de passe"
-                onInputChange={() => {
+                value=""
+                onChange={(event) => {
+                  console.log(event);
                   console.log("Changement de valeur du mot de passe");
                 }}
               />

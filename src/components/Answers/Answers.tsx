@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { ChangeEvent, Fragment, useState } from "react";
 
 import arrowLeft from "../../assets/icons/arrow_left.svg";
 
@@ -12,12 +12,19 @@ import "./Answers.scss";
 export default function Answers() {
   const [step, setStep] = useState(0);
 
+  const [dateTravel, setDateTravel] = useState("");
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setDateTravel(event.target.value);
+  };
+
   const nextStep = () => setStep((previousStep) => previousStep + 1);
   const previousStep = () => setStep((previousStep) => previousStep - 1);
+
   const renderStep = (step: number) => {
     switch (step) {
       case 0:
-        return <TravelDate />;
+        return <TravelDate value={dateTravel} onChange={handleInputChange} />;
 
       case 1:
         return <Number />;
@@ -33,7 +40,7 @@ export default function Answers() {
     }
   };
 
-  const goBack = () => {
+  const goToBackScreen = () => {
     if (step > 0) {
       previousStep();
     } else {
@@ -41,7 +48,7 @@ export default function Answers() {
     }
   };
 
-  const goNext = () => {
+  const goToNextScreen = () => {
     if (step < 3) {
       nextStep();
     } else {
@@ -61,7 +68,7 @@ export default function Answers() {
     <Fragment>
       <div className="wrapper">
         <header className="header header--single">
-          <button className="header__back" onClick={goBack}>
+          <button className="header__back" onClick={goToBackScreen}>
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -78,7 +85,7 @@ export default function Answers() {
 
             <button
               className="button button--primary"
-              onClick={goNext}
+              onClick={goToNextScreen}
               disabled={step === 3}
             >
               {step === 3 ? "Valider mon profil" : "Continuer"}

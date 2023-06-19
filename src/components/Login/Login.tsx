@@ -15,14 +15,6 @@ export default function Login() {
     console.log(checked);
   };
 
-  const handleEmailChange = (value: string) => {
-    console.log("La nouvelle valeur de l'e-mail est : ", value);
-  };
-
-  const handlePasswordChange = (value: string) => {
-    console.log("La nouvelle valeur du mot de passe est : ", value);
-  };
-
   return (
     <Fragment>
       <div className="wrapper">
@@ -51,7 +43,11 @@ export default function Login() {
                 id="email"
                 type="text"
                 placeholder="Votre adresse e-mail"
-                onInputChange={handleEmailChange}
+                value=""
+                onChange={(event) => {
+                  console.log(event);
+                  console.log("Changement de valeur de l'e-mail");
+                }}
               />
             </div>
 
@@ -64,7 +60,11 @@ export default function Login() {
                 id="password"
                 type="password"
                 placeholder="Votre mot de passe"
-                onInputChange={handlePasswordChange}
+                value=""
+                onChange={(event) => {
+                  console.log(event);
+                  console.log("Changement de valeur du mot de passe");
+                }}
               />
             </div>
 
