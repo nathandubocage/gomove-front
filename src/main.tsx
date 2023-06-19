@@ -7,6 +7,7 @@ import App from "./App.tsx";
 import Welcome from "./components/Welcome/Welcome.tsx";
 import Login from "./components/Login/Login.tsx";
 import Register from "./components/Register/Register.tsx";
+import Introduction from "./components/Introduction/Introduction.tsx";
 
 import "./index.scss";
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/introduction",
+    element: <Introduction />,
   },
 ]);
 
