@@ -8,10 +8,19 @@ import "./Login.scss";
 
 import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
+import Input from "../Input/Input";
 
 export default function Login() {
   const handleSwitch = (checked: boolean) => {
     console.log(checked);
+  };
+
+  const handleEmailChange = (value: string) => {
+    console.log("La nouvelle valeur de l'e-mail est : ", value);
+  };
+
+  const handlePasswordChange = (value: string) => {
+    console.log("La nouvelle valeur du mot de passe est : ", value);
   };
 
   return (
@@ -37,11 +46,12 @@ export default function Login() {
               <label className="login__label" htmlFor="email">
                 Adresse e-mail*
               </label>
-              <input
-                className="login__input"
-                type="text"
+
+              <Input
                 id="email"
+                type="text"
                 placeholder="Votre adresse e-mail"
+                onInputChange={handleEmailChange}
               />
             </div>
 
@@ -49,11 +59,12 @@ export default function Login() {
               <label className="login__label" htmlFor="password">
                 Mot de passe*
               </label>
-              <input
-                className="login__input"
-                type="password"
+
+              <Input
                 id="password"
+                type="password"
                 placeholder="Votre mot de passe"
+                onInputChange={handlePasswordChange}
               />
             </div>
 

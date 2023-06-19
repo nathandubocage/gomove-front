@@ -1,0 +1,22 @@
+@import "../../stylesheets/variables.scss";
+
+.input {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 18px;
+
+  min-height: 68px;
+
+  border: 1px solid $gray-suit;
+  border-radius: 4px;
+  box-shadow: inset -2px -2px 12px rgba(137, 125, 125, 0.1);
+
+  color: $bleached-cedar;
+
+  padding: 0 12px;
+
+  &::placeholder {
+    color: $mobster;
+  }
+}
