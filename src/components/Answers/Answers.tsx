@@ -14,6 +14,9 @@ export default function Answers() {
 
   const [dateTravel, setDateTravel] = useState("");
   const [passengers, setPassengers] = useState(1);
+  const [price, setPrice] = useState(0);
+  const [continent, setContinent] = useState("");
+  const [country, setCountry] = useState("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDateTravel(event.target.value);
@@ -21,6 +24,18 @@ export default function Answers() {
 
   const handlePassengersChange = (value: number) => {
     setPassengers(value);
+  };
+
+  const handlePriceChange = (value: number) => {
+    setPrice(value);
+  };
+
+  const handleContinentChange = (value: string) => {
+    setContinent(value);
+  };
+
+  const handleCountryChange = (value: string) => {
+    setCountry(value);
   };
 
   const nextStep = () => setStep((previousStep) => previousStep + 1);
@@ -35,10 +50,17 @@ export default function Answers() {
         return <Number value={passengers} onChange={handlePassengersChange} />;
 
       case 2:
-        return <Price />;
+        return <Price value={price} onChange={handlePriceChange} />;
 
       case 3:
-        return <Location />;
+        return (
+          <Location
+            continentValue={continent}
+            onContinentChange={handleContinentChange}
+            countryValue={country}
+            onCountryChange={handleCountryChange}
+          />
+        );
 
       default:
         return null;
@@ -91,7 +113,7 @@ export default function Answers() {
             <button
               className="button button--primary"
               onClick={goToNextScreen}
-              disabled={step === 3}
+              disabled={step === 4}
             >
               {step === 3 ? "Valider mon profil" : "Continuer"}
             </button>

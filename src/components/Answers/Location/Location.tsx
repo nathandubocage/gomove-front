@@ -1,11 +1,37 @@
-import { Fragment } from "react";
+import { FC } from "react";
 
-import Heading from "../../Heading/Heading";
+import Select from "../../Select/Select";
 
-export default function Location() {
+import { LocationProps } from "../../../types/location.spec";
+
+const Location: FC<LocationProps> = ({
+  continentValue,
+  onContinentChange,
+  countryValue,
+  onCountryChange,
+}) => {
   return (
-    <Fragment>
-      <Heading content="Quelle partie du monde souhaitez-vous explorer ?" />
-    </Fragment>
+    <div>
+      <Select
+        value={continentValue}
+        onChange={onContinentChange}
+        options={[
+          "Europe",
+          "Asia",
+          "Africa",
+          "North America",
+          "South America",
+          "Oceania",
+          "Antarctica",
+        ]}
+      />
+      <Select
+        value={countryValue}
+        onChange={onCountryChange}
+        options={["France", "Spain", "United States", "China", "Italy"]}
+      />
+    </div>
   );
-}
+};
+
+export default Location;

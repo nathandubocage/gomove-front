@@ -1,11 +1,21 @@
-import { Fragment } from "react";
+import { FC } from "react";
 
-import Heading from "../../Heading/Heading";
+import Range from "../../Range/Range";
 
-export default function Price() {
+import { RangeState } from "../../../types/range.spec";
+
+const Price: FC<RangeState> = ({ value, onChange }) => {
   return (
-    <Fragment>
-      <Heading content="Quel est votre budget ?" />
-    </Fragment>
+    <section className="price">
+      <label className="price__label" htmlFor="price">
+        Price
+      </label>
+
+      <Range value={value} min={0} max={100} onChange={onChange} />
+
+      <p>&lt; {value} €</p>
+    </section>
   );
-}
+};
+
+export default Price;
