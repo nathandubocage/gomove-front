@@ -1,7 +1,11 @@
 import { Fragment } from "react";
 
-import arrowLeft from "../../../assets/icons/arrow_left.svg";
 import Heading from "../../Heading/Heading";
+import CardSetting from "../../Card/Setting/CardSetting";
+
+import arrowLeft from "../../../assets/icons/arrow_left.svg";
+
+import "./Criteria.scss";
 
 export default function Criteria() {
   return (
@@ -23,7 +27,15 @@ export default function Criteria() {
 
         <Heading content="Mes critères" />
 
-        <section className="criteria"></section>
+        <section className="criteria">
+          <div className="criteria__cards">
+            <CardSetting title="Localisation" subtitle="Paris" />
+            <CardSetting title="Dates" subtitle="12/06/2023 - 18/06/2023" />
+            <CardSetting title="Voyageurs" subtitle="2" />
+            <CardSetting title="Budget" subtitle="< 800 €" />
+            <CardSetting title="Destination" subtitle="Europe" />
+          </div>
+        </section>
       </div>
     </Fragment>
   );
