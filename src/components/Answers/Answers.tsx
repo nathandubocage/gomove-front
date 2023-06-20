@@ -9,6 +9,16 @@ import Location from "./Location/Location";
 
 import "./Answers.scss";
 
+const continentCountries = {
+  Europe: ["France", "Germany", "Spain"],
+  Asie: ["China", "India", "Japan"],
+  Afrique: ["Egypt", "Nigeria", "South Africa"],
+  "Amérique du Nord": ["United States", "Canada", "Mexico"],
+  "Amérique du Sud": ["Brazil", "Argentina", "Chile"],
+  Oceanie: ["Australia", "New Zealand", "Fiji"],
+  Antarctique: ["Antarctica"],
+};
+
 export default function Answers() {
   const [step, setStep] = useState(0);
 
@@ -17,6 +27,7 @@ export default function Answers() {
   const [price, setPrice] = useState(0);
   const [continent, setContinent] = useState("");
   const [country, setCountry] = useState("");
+  const [availableCountries, setAvailableCountries] = useState<string[]>([]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDateTravel(event.target.value);
@@ -32,6 +43,9 @@ export default function Answers() {
 
   const handleContinentChange = (value: string) => {
     setContinent(value);
+    const countries =
+      continentCountries[value as keyof typeof continentCountries];
+    setAvailableCountries(countries ?? []);
   };
 
   const handleCountryChange = (value: string) => {
@@ -55,10 +69,12 @@ export default function Answers() {
       case 3:
         return (
           <Location
+            continentCountries={continentCountries}
             continentValue={continent}
             onContinentChange={handleContinentChange}
             countryValue={country}
             onCountryChange={handleCountryChange}
+            availableCountries={availableCountries}
           />
         );
 
@@ -80,11 +96,6 @@ export default function Answers() {
       nextStep();
     } else {
       console.log("Valider mon profil");
-      console.log(dateTravel);
-      console.log(passengers);
-      console.log(price);
-      console.log(continent);
-      console.log(country);
     }
   };
 

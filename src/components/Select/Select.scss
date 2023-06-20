@@ -1,0 +1,38 @@
+@import "../../stylesheets/variables.scss";
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+
+  .select {
+    appearance: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 18px;
+
+    min-height: 68px;
+
+    border: 1px solid $gray-suit;
+    border-radius: 4px;
+    box-shadow: inset -2px -2px 12px rgba(137, 125, 125, 0.1);
+
+    color: $bleached-cedar;
+
+    padding: 0 12px;
+
+    width: 100%;
+
+    &::placeholder {
+      color: $mobster;
+    }
+  }
+
+  &::after {
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1.41 0.58L6 5.17L10.59 0.58L12 2L6 8L0 2L1.41 0.58Z' fill='black'/></svg>");
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+}

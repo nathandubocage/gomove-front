@@ -3,6 +3,8 @@ export interface LocationProps {
   onContinentChange: (value: string) => void;
   countryValue: string;
   onCountryChange: (value: string) => void;
+  availableCountries: string[];
+  continentCountries: { [key: string]: string[] };
 }
 
 export interface SelectProps {

@@ -1,0 +1,23 @@
+@import "../../../stylesheets/variables.scss";
+
+.location {
+  margin-top: 56px;
+
+  &__label {
+    color: $bleached-cedar;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 15px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    &:last-child {
+      margin-top: 21px;
+    }
+  }
+}
