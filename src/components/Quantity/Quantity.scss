@@ -1,1 +1,33 @@
-@import "../../../stylesheets/variables.scss";
+@import "../../stylesheets/variables.scss";
+
+.quantity {
+  position: relative;
+  border: 1px solid $gray-suit;
+  border-radius: 5px;
+  padding: 4px;
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+    outline: none;
+  }
+
+  &__button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: $bleached-cedar;
+    color: $white;
+    border-radius: 4px;
+
+    &--first {
+      left: 4px;
+    }
+
+    &--last {
+      right: 4px;
+    }
+  }
+}

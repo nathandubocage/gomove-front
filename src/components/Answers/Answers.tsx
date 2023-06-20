@@ -80,6 +80,11 @@ export default function Answers() {
       nextStep();
     } else {
       console.log("Valider mon profil");
+      console.log(dateTravel);
+      console.log(passengers);
+      console.log(price);
+      console.log(continent);
+      console.log(country);
     }
   };
 

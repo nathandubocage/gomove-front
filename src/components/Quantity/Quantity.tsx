@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import "./Quantity.scss";
+
 import { QuantityProps } from "../../types/quantity.spec";
 
 const Quantity: FC<QuantityProps> = ({ value, onChange }) => {
@@ -18,10 +20,25 @@ const Quantity: FC<QuantityProps> = ({ value, onChange }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleDecrement}>-</button>
-      <input type="number" value={value} onChange={handleChange} />
-      <button onClick={handleIncrement}>+</button>
+    <div className="quantity">
+      <button
+        className="quantity__button quantity__button--first"
+        onClick={handleDecrement}
+      >
+        -
+      </button>
+      <input
+        className="quantity__input"
+        type="number"
+        value={value}
+        onChange={handleChange}
+      />
+      <button
+        className="quantity__button quantity__button--last"
+        onClick={handleIncrement}
+      >
+        +
+      </button>
     </div>
   );
 };
