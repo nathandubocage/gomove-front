@@ -96,6 +96,8 @@ export default function Answers() {
       nextStep();
     } else {
       console.log("Valider mon profil");
+      console.log(country);
+      console.log(continent);
     }
   };
 

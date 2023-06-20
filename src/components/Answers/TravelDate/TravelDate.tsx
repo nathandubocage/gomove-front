@@ -1,6 +1,4 @@
-import { FC, Fragment, useState } from "react";
-import { DateRange, DayPicker } from "react-day-picker";
-import { addDays, format } from "date-fns";
+import { FC, Fragment } from "react";
 
 import { InputState } from "../../../types/input.spec";
 
@@ -9,28 +7,7 @@ import Input from "../../Input/Input";
 
 import "./TravelDate.scss";
 
-const pastMonth = new Date(2020, 10, 15);
-
 const TravelDate: FC<InputState> = ({ value, onChange }) => {
-  const defaultSelected: DateRange = {
-    from: pastMonth,
-    to: addDays(pastMonth, 4),
-  };
-  const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
-
-  let footer = <p>Please pick the first day.</p>;
-  if (range?.from) {
-    if (!range.to) {
-      footer = <p>{format(range.from, "PPP")}</p>;
-    } else if (range.to) {
-      footer = (
-        <p>
-          {format(range.from, "PPP")}–{format(range.to, "PPP")}
-        </p>
-      );
-    }
-  }
-
   return (
     <Fragment>
       <Heading content="Pendant combien de jours souhaitez vous voyager ?" />
@@ -47,15 +24,6 @@ const TravelDate: FC<InputState> = ({ value, onChange }) => {
             placeholder="Vos dates de voyage"
             onChange={onChange}
             value={value}
-          />
-
-          <DayPicker
-            id="test"
-            mode="range"
-            defaultMonth={pastMonth}
-            selected={range}
-            footer={footer}
-            onSelect={setRange}
           />
         </div>
       </section>
