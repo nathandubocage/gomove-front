@@ -4,7 +4,7 @@ import arrowLeft from "../../assets/icons/arrow_left.svg";
 
 import Weather from "./Weather/Weather";
 import Room from "./Room/Room";
-import Travel from "../Travels/Travel";
+import Travel from "./Travel/Travel";
 import Hobbies from "./Hobbies/Hobbies";
 import Food from "./Food/Food";
 
