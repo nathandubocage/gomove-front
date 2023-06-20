@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
 import CardCriteria from "../../Card/Criteria/CardCriteria";
+import CardSetting from "../../Card/Setting/CardSetting";
 
 import "./Home.scss";
 
@@ -9,9 +10,9 @@ import logout from "../../../assets/icons/logout.svg";
 import settings from "../../../assets/icons/settings.svg";
 import criteria from "../../../assets/icons/criteria.svg";
 import user from "../../../assets/icons/user.svg";
+import heart from "../../../assets/icons/heart.svg";
 
 import backgroundCriteria from "../../../assets/images/background_criteria.png";
-import CardSetting from "../../Card/Setting/CardSetting";
 
 export default function Home() {
   return (
@@ -70,6 +71,15 @@ export default function Home() {
               <CardSetting title="Destination" subtitle="Europe" />
             </div>
           </div>
+        </section>
+
+        <section className="bookmarks">
+          <div className="bookmarks__heading">
+            <img src={heart} alt="Mon profil" className="bookmarks__heart" />
+            <span className="bookmarks__title">Coups de coeur</span>
+          </div>
+
+          <div className="bookmarks__cards"></div>
         </section>
       </div>
     </Fragment>
