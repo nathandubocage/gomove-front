@@ -29,11 +29,17 @@ export default function Criteria() {
 
         <section className="criteria">
           <div className="criteria__cards">
-            <CardSetting title="Localisation" subtitle="Paris" />
-            <CardSetting title="Dates" subtitle="12/06/2023 - 18/06/2023" />
-            <CardSetting title="Voyageurs" subtitle="2" />
-            <CardSetting title="Budget" subtitle="< 800 €" />
-            <CardSetting title="Destination" subtitle="Europe" />
+            <CardSetting title="Environnement" subtitle="Soleil ☀️, Ville 🌆" />
+            <CardSetting
+              title="Type de logement"
+              subtitle="Hôtel 🏨, Camping ⛺️"
+            />
+            <CardSetting title="Transport" subtitle="-" />
+            <CardSetting title="Activités" subtitle="Sorties le soir 🪩" />
+            <CardSetting
+              title="Importance nourriture"
+              subtitle="Plutôt oui ☺️"
+            />
           </div>
         </section>
       </div>
