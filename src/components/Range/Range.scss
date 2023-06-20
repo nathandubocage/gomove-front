@@ -1,0 +1,19 @@
+@import "../../stylesheets/variables.scss";
+
+.range {
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 2.5px;
+  background: $bleached-cedar;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: $scarpa-flow;
+    border: 1px solid $white;
+  }
+}

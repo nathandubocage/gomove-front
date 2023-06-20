@@ -1,1 +1,16 @@
 @import "../../../stylesheets/variables.scss";
+
+.price {
+  margin-top: 98px;
+
+  &__label {
+    display: block;
+    text-align: center;
+    color: $bleached-cedar;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 35px;
+    margin-bottom: 17px;
+  }
+}

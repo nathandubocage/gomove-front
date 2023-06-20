@@ -1,20 +1,23 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 
+import Heading from "../../Heading/Heading";
 import Range from "../../Range/Range";
+
+import "./Price.scss";
 
 import { RangeState } from "../../../types/range.spec";
 
 const Price: FC<RangeState> = ({ value, onChange }) => {
   return (
-    <section className="price">
-      <label className="price__label" htmlFor="price">
-        Price
-      </label>
+    <Fragment>
+      <Heading content="Quel est votre budget ?" />
 
-      <Range value={value} min={0} max={100} onChange={onChange} />
+      <section className="price">
+        <label className="price__label">&lt; {value} €</label>
 
-      <p>&lt; {value} €</p>
-    </section>
+        <Range value={value} min={0} max={100} onChange={onChange} />
+      </section>
+    </Fragment>
   );
 };
 

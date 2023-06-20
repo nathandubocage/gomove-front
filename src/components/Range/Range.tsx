@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import "./Range.scss";
+
 import { RangeProps } from "../../types/range.spec";
 
 const Range: FC<RangeProps> = ({ value, min, max, onChange }) => {
@@ -9,6 +11,7 @@ const Range: FC<RangeProps> = ({ value, min, max, onChange }) => {
 
   return (
     <input
+      className="range"
       type="range"
       value={value}
       min={min}
