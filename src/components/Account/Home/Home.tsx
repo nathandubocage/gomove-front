@@ -17,7 +17,6 @@ import user from "../../../assets/icons/user.svg";
 import heart from "../../../assets/icons/heart.svg";
 
 import backgroundCriteria from "../../../assets/images/background_criteria.png";
-import backgroundBookmark from "../../../assets/fake/berlin.png";
 
 export default function Home() {
   return (
@@ -97,22 +96,22 @@ export default function Home() {
           scrollbar={{ draggable: true }}
         >
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
           <SwiperSlide>
-            <CardBookmark background={backgroundBookmark} />
+            <CardBookmark />
           </SwiperSlide>
         </Swiper>
       </section>

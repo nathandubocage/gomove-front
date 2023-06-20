@@ -3,7 +3,7 @@ import "./CardBookmark.scss";
 import passengers from "../../../assets/icons/passengers.svg";
 import arrows from "../../../assets/icons/arrows.svg";
 
-export default function CardBookmark({ background }: { background: string }) {
+export default function CardBookmark() {
   return (
     <div className="card-bookmark">
       <img

@@ -97,4 +97,26 @@
       border-radius: 5px;
     }
   }
+
+  &__delete {
+    button {
+      width: 181px;
+      height: 48px;
+      background-color: transparent;
+      border: 1px solid $tango;
+      color: $tango;
+      border-radius: 34px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+      transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: $tango;
+      }
+    }
+  }
 }
