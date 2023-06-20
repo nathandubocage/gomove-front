@@ -9,10 +9,11 @@ import Login from "./components/Login/Login.tsx";
 import Register from "./components/Register/Register.tsx";
 import Introduction from "./components/Introduction/Introduction.tsx";
 import Answers from "./components/Answers/Answers.tsx";
-
-import "./index.scss";
 import Home from "./components/Account/Home/Home.tsx";
 import Criteria from "./components/Account/Criteria/Criteria.tsx";
+import Criterias from "./components/Criterias/Criterias.tsx";
+
+import "./index.scss";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/account",
     element: <Home />,
+  },
+  {
+    path: "/criterias",
+    element: <Criterias />,
   },
   {
     path: "/criteria",
