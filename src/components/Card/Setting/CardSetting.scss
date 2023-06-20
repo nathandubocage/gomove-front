@@ -1,0 +1,39 @@
+@import "../../../stylesheets/variables.scss";
+
+.card-setting {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 92px;
+  background-color: $white;
+  border: 1px solid $gray-suit;
+  box-shadow: inset -2px -2px 12px rgba(137, 125, 125, 0.1);
+  border-radius: 5px;
+  padding: 24px 12px;
+  padding-right: 40px;
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  &__title {
+    color: $mobster;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 20px;
+  }
+
+  &__subtitle {
+    color: $bleached-cedar;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 20px;
+  }
+}

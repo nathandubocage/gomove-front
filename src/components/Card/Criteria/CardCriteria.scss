@@ -1,0 +1,31 @@
+@import "../../../stylesheets/variables.scss";
+
+.card-criteria {
+  cursor: pointer;
+
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 164px;
+  background-color: $bleached-cedar;
+  background-repeat: no-repeat;
+  background-position: top right;
+  border-radius: 5px;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 14px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  &__title {
+    color: $white;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../stylesheets/variables.scss";
+
+.account {
+  margin-top: 30px;
+  padding-bottom: 20px;
+
+  &__profil {
+    margin-top: 56px;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    &-user {
+      width: 16px;
+      height: 16px;
+    }
+
+    &-title {
+      color: $bleached-cedar;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 25px;
+    }
+
+    &-cards {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      margin-top: 24px;
+    }
+  }
+}

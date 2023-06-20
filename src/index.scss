@@ -57,6 +57,10 @@
     padding: 54px 0;
   }
 
+  &--account {
+    justify-content: flex-end;
+  }
+
   &__back {
     position: absolute;
     left: 0;
@@ -72,5 +76,21 @@
   &__logo {
     width: 43.81px;
     height: 48px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $gray-suit;
+      border-radius: 5px;
+    }
   }
 }
