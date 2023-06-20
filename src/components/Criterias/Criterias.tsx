@@ -2,6 +2,12 @@ import { Fragment, useState } from "react";
 
 import arrowLeft from "../../assets/icons/arrow_left.svg";
 
+import Weather from "./Weather/Weather";
+import Room from "./Room/Room";
+import Travel from "../Travels/Travel";
+import Hobbies from "./Hobbies/Hobbies";
+import Food from "./Food/Food";
+
 import "./Criterias.scss";
 
 export default function Criterias() {
@@ -9,6 +15,28 @@ export default function Criterias() {
 
   const nextStep = () => setStep((previousStep) => previousStep + 1);
   const previousStep = () => setStep((previousStep) => previousStep - 1);
+
+  const renderStep = (step: number) => {
+    switch (step) {
+      case 0:
+        return <Weather />;
+
+      case 1:
+        return <Room />;
+
+      case 2:
+        return <Travel />;
+
+      case 3:
+        return <Hobbies />;
+
+      case 4:
+        return <Food />;
+
+      default:
+        return null;
+    }
+  };
 
   const totalSteps = 5;
   const bullets = [...Array(totalSteps)].map((_, index) => (
@@ -48,6 +76,8 @@ export default function Criterias() {
         </header>
 
         <section className="criterias">
+          {renderStep(step)}
+
           <div className="criterias__progress">
             <div className="criterias__bullets">{bullets}</div>
 
