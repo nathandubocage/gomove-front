@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import Heading from "../Heading/Heading";
 import Input from "../Input/Input";
@@ -8,8 +8,16 @@ import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
 
 import "./Register.scss";
+import useRegister from "../../hooks/useRegister";
 
 export default function Register() {
+
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const { handleSubmit } = useRegister();
+
   return (
     <Fragment>
       <div className="wrapper">
@@ -38,11 +46,8 @@ export default function Register() {
                 id="name"
                 type="text"
                 placeholder="Votre nom et prénom"
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur du nom et prénom");
-                }}
-                value=""
+                onChange={(event) => setName(event.target.value)}
+                value={name}
               />
             </div>
 
@@ -55,11 +60,8 @@ export default function Register() {
                 id="phone"
                 type="tel"
                 placeholder="00/00/00/00/00"
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur du téléphone");
-                }}
-                value=""
+                onChange={(event) => setPhone(event.target.value)}
+                value={phone}
               />
             </div>
 
@@ -72,33 +74,30 @@ export default function Register() {
                 id="email"
                 type="email"
                 placeholder="Votre adresse e-mail"
-                value=""
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur de l'e-mail");
-                }}
+                onChange={(event) => setEmail(event.target.value)}
+                value={email}
               />
             </div>
 
             <div className="register__column">
               <label className="register__label" htmlFor="password">
-                Adresse e-mail*
+                Mot de passe*
               </label>
 
               <Input
                 id="password"
                 type="password"
                 placeholder="Votre mot de passe"
-                value=""
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur du mot de passe");
-                }}
+                onChange={(event) => setPassword(event.target.value)}
+                value={password}
               />
             </div>
           </form>
 
-          <Button content="Créer mon compte" />
+          <Button
+            content="Créer mon compte"
+            onClick={() => handleSubmit({ name, email, password, phone })}
+          />
         </section>
       </div>
     </Fragment>
