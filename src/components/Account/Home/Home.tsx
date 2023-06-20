@@ -2,7 +2,11 @@ import { Fragment } from "react";
 
 import CardCriteria from "../../Card/Criteria/CardCriteria";
 import CardSetting from "../../Card/Setting/CardSetting";
+import CardBookmark from "../../Card/Bookmark/CardBookmark";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 import "./Home.scss";
 
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
@@ -13,11 +17,12 @@ import user from "../../../assets/icons/user.svg";
 import heart from "../../../assets/icons/heart.svg";
 
 import backgroundCriteria from "../../../assets/images/background_criteria.png";
+import backgroundBookmark from "../../../assets/fake/berlin.png";
 
 export default function Home() {
   return (
     <Fragment>
-      <div className="wrapper">
+      <div className="wrapper-single">
         <header className="header header--account">
           <button className="header__back">
             <img
@@ -72,16 +77,45 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className="bookmarks">
+      </div>
+      <section className="bookmarks">
+        <div className="wrapper-single">
           <div className="bookmarks__heading">
             <img src={heart} alt="Mon profil" className="bookmarks__heart" />
             <span className="bookmarks__title">Coups de coeur</span>
           </div>
+        </div>
 
-          <div className="bookmarks__cards"></div>
-        </section>
-      </div>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1.25}
+          slidesOffsetBefore={20}
+          slidesOffsetAfter={20}
+          centeredSlides={false}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardBookmark background={backgroundBookmark} />
+          </SwiperSlide>
+        </Swiper>
+      </section>
     </Fragment>
   );
 }
