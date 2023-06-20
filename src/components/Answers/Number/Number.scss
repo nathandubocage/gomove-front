@@ -1,0 +1,19 @@
+@import "../../../stylesheets/variables.scss";
+
+.number {
+  margin-top: 69px;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}

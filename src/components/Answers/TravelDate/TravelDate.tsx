@@ -48,6 +48,7 @@ const TravelDate: FC<InputState> = ({ value, onChange }) => {
             onChange={onChange}
             value={value}
           />
+
           <DayPicker
             id="test"
             mode="range"

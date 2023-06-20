@@ -13,9 +13,14 @@ export default function Answers() {
   const [step, setStep] = useState(0);
 
   const [dateTravel, setDateTravel] = useState("");
+  const [passengers, setPassengers] = useState(1);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDateTravel(event.target.value);
+  };
+
+  const handlePassengersChange = (value: number) => {
+    setPassengers(value);
   };
 
   const nextStep = () => setStep((previousStep) => previousStep + 1);
@@ -27,7 +32,7 @@ export default function Answers() {
         return <TravelDate value={dateTravel} onChange={handleInputChange} />;
 
       case 1:
-        return <Number />;
+        return <Number value={passengers} onChange={handlePassengersChange} />;
 
       case 2:
         return <Price />;
