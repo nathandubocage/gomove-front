@@ -14,9 +14,10 @@ import Criteria from "./components/Account/Criteria/Criteria.tsx";
 import Criterias from "./components/Criterias/Criterias.tsx";
 import TravelDate from "./components/Settings/TravelDate/TravelDate.tsx";
 import Passengers from "./components/Settings/Passengers/Passengers.tsx";
+import Price from "./components/Settings/Price/Price.tsx";
+import Destination from "./components/Settings/Destination/Destination.tsx";
 
 import "./index.scss";
-import Price from "./components/Settings/Price/Price.tsx";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
   {
     path: "/price",
     element: <Price />,
+  },
+  {
+    path: "/destination",
+    element: <Destination />,
   },
 ]);
 
