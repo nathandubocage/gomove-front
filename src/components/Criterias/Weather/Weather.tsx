@@ -9,9 +9,9 @@ import { CriteriasProps } from "../../../types/criteria.spec";
 const Weather: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   const buttons = [
     { emoji: "☀️", label: "Soleil" },
-    { emoji: "☔", label: "Pluie" },
-    { emoji: "❄️", label: "Neige" },
-    { emoji: "🌪️", label: "Tempête" },
+    { emoji: "⛰️", label: "Montagne" },
+    { emoji: "🌊", label: "Mer/Océan" },
+    { emoji: "🌆", label: "Ville" },
   ];
 
   return (

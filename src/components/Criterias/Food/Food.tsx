@@ -8,10 +8,10 @@ import { CriteriasProps } from "../../../types/criteria.spec";
 
 const Food: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   const buttons = [
-    { emoji: "☀️", label: "Soleil" },
-    { emoji: "☔", label: "Pluie" },
-    { emoji: "❄️", label: "Neige" },
-    { emoji: "🌪️", label: "Tempête" },
+    { emoji: "🤤", label: "Énormément" },
+    { emoji: "😋", label: "Plutôt oui" },
+    { emoji: "🤔", label: "Pas vraiment" },
+    { emoji: "🙃", label: "Non" },
   ];
 
   return (

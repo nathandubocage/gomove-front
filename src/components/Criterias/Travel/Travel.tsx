@@ -8,10 +8,10 @@ import { CriteriasProps } from "../../../types/criteria.spec";
 
 const Travel: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   const buttons = [
-    { emoji: "☀️", label: "Soleil" },
-    { emoji: "☔", label: "Pluie" },
-    { emoji: "❄️", label: "Neige" },
-    { emoji: "🌪️", label: "Tempête" },
+    { emoji: "🚲", label: "Vélo" },
+    { emoji: "🚗", label: "Voiture" },
+    { emoji: "🚅", label: "Train" },
+    { emoji: "🛩️", label: "Avion" },
   ];
 
   return (

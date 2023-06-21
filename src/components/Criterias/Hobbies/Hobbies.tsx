@@ -8,10 +8,10 @@ import { CriteriasProps } from "../../../types/criteria.spec";
 
 const Hobbies: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   const buttons = [
-    { emoji: "☀️", label: "Soleil" },
-    { emoji: "☔", label: "Pluie" },
-    { emoji: "❄️", label: "Neige" },
-    { emoji: "🌪️", label: "Tempête" },
+    { emoji: "🪩", label: "Sorties le soir" },
+    { emoji: "🏄‍♀️", label: "Activités sportives" },
+    { emoji: "🖼️", label: "Activités culturelles" },
+    { emoji: "🐨", label: "Je ne bouge pas" },
   ];
 
   return (

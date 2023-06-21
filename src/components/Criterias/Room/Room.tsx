@@ -8,10 +8,10 @@ import { CriteriasProps } from "../../../types/criteria.spec";
 
 const Room: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   const buttons = [
-    { emoji: "☀️", label: "Soleil" },
-    { emoji: "☔", label: "Pluie" },
-    { emoji: "❄️", label: "Neige" },
-    { emoji: "🌪️", label: "Tempête" },
+    { emoji: "🏠", label: "Appartement/Maison" },
+    { emoji: "🏨", label: "Hôtel" },
+    { emoji: "🛌", label: "Chambre d'hôte" },
+    { emoji: "🏕️", label: "Camping" },
   ];
 
   return (
