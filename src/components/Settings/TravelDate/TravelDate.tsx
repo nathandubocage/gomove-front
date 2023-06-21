@@ -6,9 +6,13 @@ import Input from "../../Input/Input";
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./TravelDate.scss";
+import { useUserStore } from "../../../store/useUserStore";
 
 const TravelDate = () => {
-  const [dateTravel, setDateTravel] = useState("");
+  const { userCriterias, setUserCriterias } = useUserStore();
+  const [dateTravel, setDateTravel] = useState(
+    userCriterias?.departureDate || ""
+  );
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDateTravel(event.target.value);
@@ -51,9 +55,9 @@ const TravelDate = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() => {
-              null;
-            }}
+            onClick={() =>
+              setUserCriterias({ ...userCriterias!, departureDate: dateTravel })
+            }
           >
             Confirmer
           </button>

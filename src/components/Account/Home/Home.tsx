@@ -18,15 +18,17 @@ import user from "../../../assets/icons/user.svg";
 import heart from "../../../assets/icons/heart.svg";
 
 import backgroundCriteria from "../../../assets/images/background_criteria.png";
+import { useUserStore } from "../../../store/useUserStore";
 
 export default function Home() {
   const navigate = useNavigate();
+  const { userCriterias, userFavourites } = useUserStore();
 
   return (
     <Fragment>
       <div className="wrapper-single">
         <header className="header header--account">
-          <button className="header__back">
+          <button className="header__back" onClick={() => navigate("/")}>
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -86,28 +88,28 @@ export default function Home() {
                   navigate("/travel-date");
                 }}
                 title="Dates"
-                subtitle="12/06/2023 - 18/06/2023"
+                subtitle={userCriterias?.departureDate || "-"}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/passengers");
                 }}
                 title="Voyageurs"
-                subtitle="2"
+                subtitle={String(userCriterias?.passengers!)}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/price");
                 }}
                 title="Budget"
-                subtitle="< 800 €"
+                subtitle={String(userCriterias?.budget!)}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/destination");
                 }}
                 title="Destination"
-                subtitle="Europe"
+                subtitle={userCriterias?.destination!}
               />
             </div>
           </div>
@@ -131,24 +133,13 @@ export default function Home() {
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
         >
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CardBookmark />
-          </SwiperSlide>
+          {userFavourites?.map((favourite) => (
+            <SwiperSlide key={favourite.id}>
+              <CardBookmark {...favourite} />
+            </SwiperSlide>
+          ))}
+         
+          
         </Swiper>
       </section>
     </Fragment>

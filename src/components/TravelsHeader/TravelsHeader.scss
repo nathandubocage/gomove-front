@@ -1,0 +1,12 @@
+@import "../../stylesheets/variables.scss";
+
+.menu-button{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: $bleached-cedar;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px #A7A7A740 inset;
+
+}
