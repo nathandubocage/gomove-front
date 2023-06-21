@@ -4,7 +4,6 @@
   border: 1px solid $gray-suit;
   margin-top: auto;
   margin-bottom: 20px;
-  flex: 1;
 
   &--primary {
     background-color: $tango;
@@ -35,6 +34,7 @@
   }
 
   &--small {
+    flex: 1;
     padding: 16px 0;
   }
 }
