@@ -5,8 +5,8 @@ import react from "@vitejs/plugin-react-swc";
 const manifestForPlugin: Partial<VitePWAOptions> = {
   registerType: "prompt",
   manifest: {
-    short_name: "React App",
-    name: "Create React App Sample",
+    short_name: "Gomove",
+    name: "Gomove",
     icons: [
       {
         src: "favicon/favicon.svg",
