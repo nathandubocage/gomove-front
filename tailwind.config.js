@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'integral-cf': ['Integral CF', 'sans-serif'],
+        'space-grotesk': ['Space Grotesk', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 };

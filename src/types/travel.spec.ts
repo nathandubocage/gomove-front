@@ -5,6 +5,7 @@ export type TTravelParams = {
   startDate: string | null;
   endDate: string | null;
   nbStopovers: string | null;
+  duration: string | null;
 };
 
 export type TTravel = {

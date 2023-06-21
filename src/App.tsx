@@ -1,10 +1,10 @@
 import "./App.scss";
-import Travel from "./components/Travels/Travel";
+import TravelList from "./components/TravelsList/TravelList";
 
 function App() {
   return (
     <>
-      <Travel />
+      <TravelList />
     </>
   );
 }
