@@ -12,6 +12,8 @@ import Answers from "./components/Answers/Answers.tsx";
 import Home from "./components/Account/Home/Home.tsx";
 import Criteria from "./components/Account/Criteria/Criteria.tsx";
 import Criterias from "./components/Criterias/Criterias.tsx";
+import TravelDate from "./components/Settings/TravelDate/TravelDate.tsx";
+import Passengers from "./components/Settings/Passengers/Passengers.tsx";
 
 import "./index.scss";
 
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
   {
     path: "/criteria",
     element: <Criteria />,
+  },
+  {
+    path: "/travel-date",
+    element: <TravelDate />,
+  },
+  {
+    path: "/passengers",
+    element: <Passengers />,
   },
 ]);
 
