@@ -12,9 +12,9 @@ const TravelDate: FC<InputState> = ({ value, onChange }) => {
     <Fragment>
       <Heading content="Pendant combien de jours souhaitez vous voyager ?" />
 
-      <section className="travel">
-        <div className="travel__column">
-          <label className="travel__label" htmlFor="date">
+      <section className="travel-date">
+        <div className="travel-date__column">
+          <label className="travel-date__label" htmlFor="date">
             Dates (optionnel)
           </label>
 
