@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import Heading from "../../Heading/Heading";
 import Quantity from "../../Quantity/Quantity";

@@ -16,6 +16,7 @@ import TravelDate from "./components/Settings/TravelDate/TravelDate.tsx";
 import Passengers from "./components/Settings/Passengers/Passengers.tsx";
 
 import "./index.scss";
+import Price from "./components/Settings/Price/Price.tsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/passengers",
     element: <Passengers />,
+  },
+  {
+    path: "/price",
+    element: <Price />,
   },
 ]);
 
