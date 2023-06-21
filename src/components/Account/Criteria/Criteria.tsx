@@ -36,7 +36,7 @@ export default function Criteria() {
         <section className="criteria">
           <div className="criteria__cards">
             <CardSetting
-              onClick={() => null}
+              onClick={() => navigate("../weather")}
               title="Environnement"
               subtitle="Soleil ☀️, Ville 🌆"
             />

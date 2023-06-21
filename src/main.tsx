@@ -18,6 +18,7 @@ import Price from "./components/Settings/Price/Price.tsx";
 import Destination from "./components/Settings/Destination/Destination.tsx";
 
 import "./index.scss";
+import Weather from "./components/Criteria/Weather/Weather.tsx";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/destination",
     element: <Destination />,
+  },
+  {
+    path: "/weather",
+    element: <Weather />,
   },
 ]);
 
