@@ -1,5 +1,9 @@
 @import "../../../stylesheets/variables.scss";
 
 .weather {
-  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 7px;
+  row-gap: 8px;
+  margin-top: 19px;
 }

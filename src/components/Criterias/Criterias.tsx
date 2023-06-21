@@ -12,6 +12,56 @@ import "./Criterias.scss";
 
 export default function Criterias() {
   const [step, setStep] = useState(0);
+  const [weatherChoices, setWeatherChoices] = useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const [roomChoices, setRoomChoices] = useState([false, false, false, false]);
+  const [travelChoices, setTravelChoices] = useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [hobbieChoices, setHobbieChoices] = useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const [foodChoice, setFoodChoice] = useState([false, false, false, false]);
+
+  const handleFoodChoice = (index: number) => {
+    setFoodChoice((prev) => prev.map((_, i) => i === index));
+  };
+
+  const handleWeatherChoice = (index: number) => {
+    setWeatherChoices((previous) =>
+      previous.map((value, i) => (i === index ? !value : value))
+    );
+  };
+
+  const handleRoomChoice = (index: number) => {
+    setRoomChoices((previous) =>
+      previous.map((value, i) => (i === index ? !value : value))
+    );
+  };
+
+  const handleTravelChoice = (index: number) => {
+    setTravelChoices((previous) =>
+      previous.map((value, i) => (i === index ? !value : value))
+    );
+  };
+
+  const handleHobbieChoice = (index: number) => {
+    setHobbieChoices((previous) =>
+      previous.map((value, i) => (i === index ? !value : value))
+    );
+  };
 
   const nextStep = () => setStep((previousStep) => previousStep + 1);
   const previousStep = () => setStep((previousStep) => previousStep - 1);
@@ -19,19 +69,31 @@ export default function Criterias() {
   const renderStep = (step: number) => {
     switch (step) {
       case 0:
-        return <Weather />;
+        return (
+          <Weather
+            choices={weatherChoices}
+            onChoiceChange={handleWeatherChoice}
+          />
+        );
 
       case 1:
-        return <Room />;
+        return <Room choices={roomChoices} onChoiceChange={handleRoomChoice} />;
 
       case 2:
-        return <Travel />;
+        return (
+          <Travel choices={travelChoices} onChoiceChange={handleTravelChoice} />
+        );
 
       case 3:
-        return <Hobbies />;
+        return (
+          <Hobbies
+            choices={hobbieChoices}
+            onChoiceChange={handleHobbieChoice}
+          />
+        );
 
       case 4:
-        return <Food />;
+        return <Food choices={foodChoice} onChoiceChange={handleFoodChoice} />;
 
       default:
         return null;

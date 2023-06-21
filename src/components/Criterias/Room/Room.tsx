@@ -4,14 +4,36 @@ import Heading from "../../Heading/Heading";
 
 import "./Room.scss";
 
-const Room: FC = () => {
+import { CriteriasProps } from "../../../types/criteria.spec";
+
+const Room: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
+  const buttons = [
+    { emoji: "☀️", label: "Soleil" },
+    { emoji: "☔", label: "Pluie" },
+    { emoji: "❄️", label: "Neige" },
+    { emoji: "🌪️", label: "Tempête" },
+  ];
+
   return (
     <Fragment>
       <Heading content="Quels types de logement affectionnez-vous ?" />
 
       <span className="small">Plusiurs réponses possibles</span>
 
-      <section className="room"></section>
+      <section className="room">
+        {choices.map((choice, index) => (
+          <button
+            key={index}
+            className={
+              choice ? "card-button card-button--active" : "card-button"
+            }
+            onClick={() => onChoiceChange(index)}
+          >
+            <span className="card-button__emoji">{buttons[index].emoji}</span>{" "}
+            <span className="card-button__label">{buttons[index].label}</span>
+          </button>
+        ))}
+      </section>
     </Fragment>
   );
 };
