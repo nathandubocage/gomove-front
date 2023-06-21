@@ -2,12 +2,14 @@ import useTravels from "../../hooks/useTravels";
 import Button from "../Button/Button";
 import TravelCard from "../TravelCard/TravelCard";
 import swipeUp from "../../assets/icons/swipe_up.svg";
+import TravelsHeader from "../TravelsHeader/TravelsHeader";
 
 export default function Travel() {
   const travels = useTravels();
 
   return travels.length > 0 ? (
-    <div className="flex flex-col gap-8 h-screen">
+    <div className="flex flex-col gap-8 h-screen relative">
+      <TravelsHeader />
       <div className="h-full w-full snap-mandatory snap-y overflow-y-scroll">
         {travels.map((travel) => (
           <TravelCard key={travel.id} {...travel} />
@@ -23,7 +25,6 @@ export default function Travel() {
         <div className="h-1/4 flex flex-col">
         <Button content="Voir le bon plan" />
         </div>
-        
       </div>
     </div>
   ) : (
