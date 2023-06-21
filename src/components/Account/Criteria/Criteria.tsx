@@ -41,18 +41,22 @@ export default function Criteria() {
               subtitle="Soleil ☀️, Ville 🌆"
             />
             <CardSetting
-              onClick={() => null}
+              onClick={() => navigate("../room")}
               title="Type de logement"
               subtitle="Hôtel 🏨, Camping ⛺️"
             />
-            <CardSetting onClick={() => null} title="Transport" subtitle="-" />
             <CardSetting
-              onClick={() => null}
+              onClick={() => navigate("../travel")}
+              title="Transport"
+              subtitle="-"
+            />
+            <CardSetting
+              onClick={() => navigate("../hobbies")}
               title="Activités"
               subtitle="Sorties le soir 🪩"
             />
             <CardSetting
-              onClick={() => null}
+              onClick={() => navigate("../food")}
               title="Importance nourriture"
               subtitle="Plutôt oui ☺️"
             />

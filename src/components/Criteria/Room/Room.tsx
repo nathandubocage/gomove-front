@@ -1,12 +1,20 @@
-import { FC, Fragment } from "react";
+import { useState } from "react";
 
 import Heading from "../../Heading/Heading";
 
+import arrowLeft from "../../../assets/icons/arrow_left.svg";
+
 import "./Room.scss";
 
-import { CriteriasProps } from "../../../types/criteria.spec";
+const Room = () => {
+  const [roomChoices, setRoomChoices] = useState([false, false, false, false]);
 
-const Room: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
+  const handleRoomChoice = (index: number) => {
+    setRoomChoices((previous) =>
+      previous.map((value, i) => (i === index ? !value : value))
+    );
+  };
+
   const buttons = [
     { emoji: "🏠", label: "Appartement/Maison" },
     { emoji: "🏨", label: "Hôtel" },
@@ -15,26 +23,42 @@ const Room: FC<CriteriasProps> = ({ choices, onChoiceChange }) => {
   ];
 
   return (
-    <Fragment>
+    <div className="wrapper">
+      <header className="header header--single">
+        <button className="header__back" onClick={() => window.history.back()}>
+          <img
+            src={arrowLeft}
+            alt="Retourner en arrière"
+            className="header__arrow"
+          />
+        </button>
+      </header>
+
       <Heading content="Quels types de logement affectionnez-vous ?" />
 
       <span className="small">Plusiurs réponses possibles</span>
 
       <section className="room">
-        {choices.map((choice, index) => (
+        {roomChoices.map((choice, index) => (
           <button
             key={index}
             className={
               choice ? "card-button card-button--active" : "card-button"
             }
-            onClick={() => onChoiceChange(index)}
+            onClick={() => handleRoomChoice(index)}
           >
             <span className="card-button__emoji">{buttons[index].emoji}</span>{" "}
             <span className="card-button__label">{buttons[index].label}</span>
           </button>
         ))}
       </section>
-    </Fragment>
+
+      <div className="criterias__progress">
+        <button className="button button--primary" onClick={() => null}>
+          Confirmer
+        </button>
+      </div>
+    </div>
   );
 };
 
