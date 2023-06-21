@@ -6,6 +6,7 @@ import Heading from "../../Heading/Heading";
 import Select from "../../Select/Select";
 
 import "./Destination.scss";
+import { useUserStore } from "../../../store/useUserStore";
 
 const Destination = () => {
   const continentCountries = {
@@ -17,8 +18,8 @@ const Destination = () => {
     Oceanie: ["Australia", "New Zealand", "Fiji"],
     Antarctique: ["Antarctica"],
   };
-
-  const [continent, setContinent] = useState("");
+  const { userCriterias, setUserCriterias } = useUserStore();
+  const [continent, setContinent] = useState(userCriterias?.destination);
   const [country, setCountry] = useState("");
   const [availableCountries, setAvailableCountries] = useState<string[]>([]);
 
@@ -64,8 +65,8 @@ const Destination = () => {
           </label>
 
           <Select
-            value={continent}
-            onChange={handleContinentChange}
+            value={continent!}
+            onChange={(e) => handleContinentChange(e)}
             options={continentList}
           />
         </div>
@@ -89,9 +90,9 @@ const Destination = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() => {
-              null;
-            }}
+            onClick={() =>
+              setUserCriterias({ ...userCriterias!, destination: continent! })
+            }
           >
             Confirmer
           </button>

@@ -16,6 +16,7 @@ const Range: FC<RangeProps> = ({ value, min, max, onChange }) => {
       value={value}
       min={min}
       max={max}
+      step={25}
       onChange={handleChange}
     />
   );

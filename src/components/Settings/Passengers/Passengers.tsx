@@ -6,9 +6,11 @@ import Quantity from "../../Quantity/Quantity";
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./Passengers.scss";
+import { useUserStore } from "../../../store/useUserStore";
 
 const Passengers = () => {
-  const [passengers, setPassengers] = useState(1);
+  const { userCriterias, setUserCriterias } = useUserStore();
+  const [passengers, setPassengers] = useState(userCriterias?.passengers || 1);
 
   const handlePassengersChange = (value: number) => {
     setPassengers(value);
@@ -36,16 +38,16 @@ const Passengers = () => {
       <section className="passengers--single">
         <div className="number__column">
           <div className="number__column">
-            <Quantity value={passengers} onChange={handlePassengersChange} />
+            <Quantity value={passengers!} onChange={handlePassengersChange} />
           </div>
         </div>
 
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() => {
-              null;
-            }}
+            onClick={() =>
+              setUserCriterias({ ...userCriterias!, passengers: passengers })
+            }
           >
             Confirmer
           </button>

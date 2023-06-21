@@ -6,9 +6,11 @@ import Range from "../../Range/Range";
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./Price.scss";
+import { useUserStore } from "../../../store/useUserStore";
 
 const Price = () => {
-  const [price, setPrice] = useState(0);
+  const { userCriterias, setUserCriterias } = useUserStore();
+  const [price, setPrice] = useState(userCriterias?.budget || 250);
 
   const handlePriceChange = (value: number) => {
     setPrice(value);
@@ -36,14 +38,14 @@ const Price = () => {
       <section className="price--single">
         <label className="price__label">&lt; {price} €</label>
 
-        <Range value={price} min={0} max={100} onChange={handlePriceChange} />
+        <Range value={price} min={0} max={1300} onChange={handlePriceChange} />
 
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() => {
-              null;
-            }}
+            onClick={() =>
+              setUserCriterias({ ...userCriterias!, budget: price })
+            }
           >
             Confirmer
           </button>
