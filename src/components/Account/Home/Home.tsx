@@ -55,6 +55,9 @@ export default function Home() {
 
         <section className="account">
           <CardCriteria
+            onClick={() => {
+              navigate("/criteria");
+            }}
             background={backgroundCriteria}
             icon={criteria}
             title="Mes critères"

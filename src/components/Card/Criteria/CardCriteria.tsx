@@ -6,9 +6,11 @@ export default function CardCriteria({
   background,
   icon,
   title,
+  onClick,
 }: CardCriteriaProps) {
   return (
     <div
+      onClick={onClick}
       style={{ backgroundImage: `url(${background})` }}
       className="card-criteria"
     >
