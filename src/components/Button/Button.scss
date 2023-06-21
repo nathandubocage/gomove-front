@@ -4,6 +4,7 @@
   border: 1px solid $gray-suit;
   margin-top: auto;
   margin-bottom: 20px;
+  flex: 1;
 
   &--primary {
     background-color: $tango;
@@ -16,5 +17,24 @@
     border-radius: 34px;
     border: none;
     padding: 24px 0;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: 1px solid $tango !important;
+    color: $tango;
+
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 20px;
+
+    border-radius: 34px;
+    border: none;
+    padding: 24px 0;
+  }
+
+  &--small {
+    padding: 16px 0;
   }
 }

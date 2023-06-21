@@ -39,9 +39,14 @@ export default function Criteria() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      height: "200px",
+      height: "230px",
       borderRadius: "20px",
       width: "80%",
+    },
+    modalContent: {
+      display: "flex",
+      flexDirection: "column",
+      height: "100%",
     },
     overlay: {
       backgroundColor: "rgba(0,0,0,0.5)",
@@ -56,6 +61,11 @@ export default function Criteria() {
       border: "none",
       fontSize: "large",
       cursor: "pointer",
+    },
+    buttons: {
+      display: "flex",
+      marginTop: "auto",
+      columnGap: "20px",
     },
   };
 
@@ -84,14 +94,28 @@ export default function Criteria() {
           onRequestClose={closeModal}
           style={customStyles}
         >
-          <button style={customStyles.closeButton} onClick={closeModal}>
-            <img src={cross} alt="Fermer la fenêtre" />
-          </button>
-          <h2 className="modal__heading">
-            Êtes-vous sûr d’effacer tous les critères ?
-          </h2>
-          <button onClick={clearCriteria}>Oui</button>
-          <button onClick={closeModal}>Non</button>
+          <div style={customStyles.modalContent}>
+            <button style={customStyles.closeButton} onClick={closeModal}>
+              <img src={cross} alt="Fermer la fenêtre" />
+            </button>
+            <h2 className="modal__heading">
+              Êtes-vous sûr d’effacer tous les critères ?
+            </h2>
+            <div style={customStyles.buttons}>
+              <button
+                className="button button--primary button--small"
+                onClick={clearCriteria}
+              >
+                Oui
+              </button>
+              <button
+                className="button button--secondary button--small"
+                onClick={closeModal}
+              >
+                Non
+              </button>
+            </div>
+          </div>
         </Modal>
 
         <Heading content="Mes critères" />
