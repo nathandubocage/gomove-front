@@ -8,3 +8,14 @@
     margin-top: 24px;
   }
 }
+
+.modal {
+  &__heading {
+    color: $bleached-cedar;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Space-Grotesk", sans-serif;
+    line-height: 25px;
+    padding-right: 32px;
+  }
+}

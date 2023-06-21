@@ -19,7 +19,10 @@ export default function Login() {
     <Fragment>
       <div className="wrapper">
         <header className="header">
-          <button className="header__back">
+          <button
+            className="header__back"
+            onClick={() => window.history.back()}
+          >
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -79,7 +82,7 @@ export default function Login() {
             </div>
           </form>
 
-          <Button content="Se connecter" />
+          <Button onClick={() => null} content="Se connecter" />
         </section>
       </div>
     </Fragment>

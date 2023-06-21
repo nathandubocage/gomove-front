@@ -12,7 +12,10 @@ export default function Introduction() {
     <Fragment>
       <div className="wrapper">
         <header className="header header--single">
-          <button className="header__back">
+          <button
+            className="header__back"
+            onClick={() => window.history.back()}
+          >
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -34,7 +37,7 @@ export default function Introduction() {
             recherche plus tard
           </p>
 
-          <Button content="Continuer" />
+          <Button onClick={() => null} content="Continuer" />
         </section>
       </div>
     </Fragment>

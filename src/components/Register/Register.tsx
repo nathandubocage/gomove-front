@@ -11,7 +11,6 @@ import "./Register.scss";
 import useRegister from "../../hooks/useRegister";
 
 export default function Register() {
-
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -22,7 +21,10 @@ export default function Register() {
     <Fragment>
       <div className="wrapper">
         <header className="header">
-          <button className="header__back">
+          <button
+            className="header__back"
+            onClick={() => window.history.back()}
+          >
             <img
               src={arrowLeft}
               alt="Retourner en arrière"

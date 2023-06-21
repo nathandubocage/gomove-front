@@ -2,9 +2,14 @@ import "./Welcome.scss";
 
 import backgroundImage from "../../assets/images/background_welcome.png";
 import logoWelcome from "../../assets/images/logo_welcome.svg";
+
 import Button from "../Button/Button";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Welcome() {
+  const navigate = useNavigate();
+
   return (
     <section
       style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -20,8 +25,13 @@ export default function Welcome() {
       </div>
 
       <div className="welcome__actions">
-        <Button content="Créer votre compte" />
-        <button className="welcome__login">Se connecter</button>
+        <Button
+          onClick={() => navigate("../register")}
+          content="Créer votre compte"
+        />
+        <button onClick={() => navigate("../login")} className="welcome__login">
+          Se connecter
+        </button>
       </div>
     </section>
   );

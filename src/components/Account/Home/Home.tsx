@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 import CardCriteria from "../../Card/Criteria/CardCriteria";
 import CardSetting from "../../Card/Setting/CardSetting";
@@ -19,6 +20,8 @@ import heart from "../../../assets/icons/heart.svg";
 import backgroundCriteria from "../../../assets/images/background_criteria.png";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <Fragment>
       <div className="wrapper-single">
@@ -52,6 +55,9 @@ export default function Home() {
 
         <section className="account">
           <CardCriteria
+            onClick={() => {
+              navigate("/criteria");
+            }}
             background={backgroundCriteria}
             icon={criteria}
             title="Mes critères"
@@ -68,11 +74,41 @@ export default function Home() {
             </div>
 
             <div className="account__profil-cards">
-              <CardSetting title="Localisation" subtitle="Paris" />
-              <CardSetting title="Dates" subtitle="12/06/2023 - 18/06/2023" />
-              <CardSetting title="Voyageurs" subtitle="2" />
-              <CardSetting title="Budget" subtitle="< 800 €" />
-              <CardSetting title="Destination" subtitle="Europe" />
+              <CardSetting
+                onClick={() => {
+                  navigate("/location");
+                }}
+                title="Localisation"
+                subtitle="Paris"
+              />
+              <CardSetting
+                onClick={() => {
+                  navigate("/travel-date");
+                }}
+                title="Dates"
+                subtitle="12/06/2023 - 18/06/2023"
+              />
+              <CardSetting
+                onClick={() => {
+                  navigate("/passengers");
+                }}
+                title="Voyageurs"
+                subtitle="2"
+              />
+              <CardSetting
+                onClick={() => {
+                  navigate("/price");
+                }}
+                title="Budget"
+                subtitle="< 800 €"
+              />
+              <CardSetting
+                onClick={() => {
+                  navigate("/destination");
+                }}
+                title="Destination"
+                subtitle="Europe"
+              />
             </div>
           </div>
         </section>
