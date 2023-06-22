@@ -81,35 +81,35 @@ export default function Home() {
                   navigate("/location");
                 }}
                 title="Localisation"
-                subtitle="Paris"
+                subtitle="Lille"
               />
               <CardSetting
                 onClick={() => {
                   navigate("/travel-date");
                 }}
                 title="Dates"
-                subtitle={userCriterias?.departureDate || "-"}
+                subtitle={userCriterias?.departureDate || "Flexible"}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/passengers");
                 }}
                 title="Voyageurs"
-                subtitle={String(userCriterias?.passengers!)}
+                subtitle={userCriterias?.passengers ? String(userCriterias?.passengers!) : "Non défini"}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/price");
                 }}
                 title="Budget"
-                subtitle={String(userCriterias?.budget!)}
+                subtitle={userCriterias?.budget ? String(userCriterias?.budget) : "Non défini"}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/destination");
                 }}
                 title="Destination"
-                subtitle={userCriterias?.destination!}
+                subtitle={userCriterias?.destination ? userCriterias?.destination : "Non défini"}
               />
             </div>
           </div>

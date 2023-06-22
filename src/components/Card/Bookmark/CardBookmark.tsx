@@ -36,12 +36,12 @@ export default function CardBookmark(cardBookmarkProps: TCardBookmarkProps) {
             <img src={arrows} /> Aller retour
           </div>
         </div>
-        <div className="absolute bottom-0 right-0 p-2">
+        <div className="absolute top-0 right-0 px-2">
           <button
-            className="font-space-grotesk font-bold"
+            className="font-space-grotesk font-thin text-3xl"
             onClick={() => removeUserFavourite(cardBookmarkProps.id)}
           >
-            X
+            x
           </button>
         </div>
       </div>

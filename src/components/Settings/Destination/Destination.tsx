@@ -7,6 +7,7 @@ import Select from "../../Select/Select";
 
 import "./Destination.scss";
 import { useUserStore } from "../../../store/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 const Destination = () => {
   const continentCountries = {
@@ -22,6 +23,8 @@ const Destination = () => {
   const [continent, setContinent] = useState(userCriterias?.destination);
   const [country, setCountry] = useState("");
   const [availableCountries, setAvailableCountries] = useState<string[]>([]);
+
+  const navigate = useNavigate();
 
   const handleContinentChange = (value: string) => {
     setContinent(value);
@@ -90,9 +93,10 @@ const Destination = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() =>
-              setUserCriterias({ ...userCriterias!, destination: continent! })
-            }
+            onClick={() => {
+              setUserCriterias({ ...userCriterias!, destination: continent! });
+              navigate("/");
+            }}
           >
             Confirmer
           </button>

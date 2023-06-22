@@ -57,7 +57,7 @@ export default function TravelCard({
     };
   }, []);
 
-  return travel.transport.length > 0 && travel.transport[0].price !== null ? (
+  return travel.transport.length > 0 && travel.transport[0]!.price !== null ? (
     <div
       ref={cardRef}
       className="h-full flex flex-col-reverse snap-center bg-cover"
@@ -69,14 +69,14 @@ export default function TravelCard({
             {travel.destination.city}
           </span>
           <span className="text-5xl">
-            {getCountryFlagEmoji(travel.destination.country)}
+            {getCountryFlagEmoji(travel.destination.country!)}
           </span>
         </h2>
 
         <div className="flex flex-col gap-2">
           <p className="font-space-grotesk font-bold text-normal">
             à partir de
-            <span className="text-3xl"> {travel.transport[0].price} €</span>
+            <span className="text-3xl"> {travel.transport[0]!.price} €</span>
           </p>
           <p className="flex gap-2">
             <img src={roundTrip} alt="Modifier" />
@@ -96,7 +96,7 @@ export default function TravelCard({
               <button
                 onClick={() => {
                   setIsFavorite(!isFavorite);
-                  removeUserFavourite(travel.id);
+                  removeUserFavourite(travel.id!);
                 }}
               >
                 <img src={heartFull} alt="Ajouter aux favoris" />

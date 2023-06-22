@@ -7,6 +7,7 @@ import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./TravelDate.scss";
 import { useUserStore } from "../../../store/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 const TravelDate = () => {
   const { userCriterias, setUserCriterias } = useUserStore();
@@ -17,6 +18,8 @@ const TravelDate = () => {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDateTravel(event.target.value);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="wrapper">
@@ -55,9 +58,13 @@ const TravelDate = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() =>
-              setUserCriterias({ ...userCriterias!, departureDate: dateTravel })
-            }
+            onClick={() => {
+              setUserCriterias({
+                ...userCriterias!,
+                departureDate: dateTravel,
+              });
+              navigate("/");
+            }}
           >
             Confirmer
           </button>

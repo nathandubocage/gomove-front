@@ -7,8 +7,10 @@ import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./Price.scss";
 import { useUserStore } from "../../../store/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 const Price = () => {
+  const navigate = useNavigate();
   const { userCriterias, setUserCriterias } = useUserStore();
   const [price, setPrice] = useState(userCriterias?.budget || 250);
 
@@ -43,9 +45,10 @@ const Price = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() =>
-              setUserCriterias({ ...userCriterias!, budget: price })
-            }
+            onClick={() => {
+              setUserCriterias({ ...userCriterias!, budget: price });
+              navigate("/");
+            }}
           >
             Confirmer
           </button>

@@ -25,7 +25,7 @@ export default function Single() {
           rgba(255, 255, 255, 1) 100%
         ),url(${travel.destination.image})`,
         }}
-        className="header header--sized flex flex-col-reverse single-header"
+        className="header--sized flex flex-col-reverse border-b-2 border-white"
       >
         <button
           className="header__back header__back--single"
@@ -39,8 +39,8 @@ export default function Single() {
         </button>
 
         <h2 className="my-4 font-integral-cf font-bold text-4xl">
-          {travel.destination.city}{" "}
-          {getCountryFlagEmoji(travel.destination.country)}
+          {travel.destination.city}
+          {getCountryFlagEmoji(travel.destination.country!)}
         </h2>
       </header>
 
@@ -69,8 +69,8 @@ export default function Single() {
         </div>
 
         <div className="tab-content">
-          {activeTab === "tabOne" && <Booking travel={travel} />}
-          {activeTab === "tabTwo" && <City />}
+          {/* {activeTab === "tabOne" && <Booking {...travel} />} */}
+          {activeTab === "tabTwo" && <City {...travel} />}
         </div>
       </section>
     </div>

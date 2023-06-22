@@ -5,9 +5,18 @@ import CardBooking from "../../Card/Booking/CardBooking";
 import "./Booking.scss";
 
 import { useNavigate } from "react-router-dom";
+import useFlights from "../../../hooks/useFlights";
+import { TTravel } from "../../../types/travel.spec";
 
-export default function Booking({ travel }: any) {
+export default function Booking(travel: TTravel) {
   const { userCriterias } = useUserStore();
+  const flights = useFlights({
+    nbPassagers: String(userCriterias?.passengers),
+    departurePlace: "/m/0d8r8",
+    travelPlace: travel.id,
+    startDate: travel.date.start,
+    endDate: travel.date.end,
+  });
   const navigate = useNavigate();
 
   const [currentCardOutward, setCurrentCardOutward] = useState<number | null>(
@@ -74,31 +83,15 @@ export default function Booking({ travel }: any) {
         <h2 className="outward__title">Choisissez votre aller</h2>
 
         <div className="outward__cards">
-          <CardBooking
-            id={1}
-            onClick={handleClick}
-            isSelected={currentCardOutward === 1}
-          />
-          <CardBooking
-            id={2}
-            onClick={handleClick}
-            isSelected={currentCardOutward === 2}
-          />
-          <CardBooking
-            id={3}
-            onClick={handleClick}
-            isSelected={currentCardOutward === 3}
-          />
-          <CardBooking
-            id={4}
-            onClick={handleClick}
-            isSelected={currentCardOutward === 4}
-          />
-          <CardBooking
-            id={5}
-            onClick={handleClick}
-            isSelected={currentCardOutward === 5}
-          />
+          {flights.map((flight, index) => (
+            <CardBooking
+              key={index}
+              id={index}
+              onClick={handleClick}
+              flight={flight}
+              isSelected={currentCardOutward === index}
+            />
+          ))}
         </div>
 
         <button
