@@ -30,45 +30,6 @@ export default function Criteria() {
     closeModal();
   };
 
-  const customStyles = {
-    content: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      height: "230px",
-      borderRadius: "20px",
-      width: "80%",
-    },
-    modalContent: {
-      display: "flex",
-      flexDirection: "column",
-      height: "100%",
-    },
-    overlay: {
-      backgroundColor: "rgba(0,0,0,0.5)",
-      boxShadow:
-        "inset -12px -12px 36px rgba(23, 140, 199, 0.12), inset 12px 12px 36px rgba(255, 255, 255, 0.5)",
-    },
-    closeButton: {
-      position: "absolute",
-      top: "25px",
-      right: "20px",
-      background: "none",
-      border: "none",
-      fontSize: "large",
-      cursor: "pointer",
-    },
-    buttons: {
-      display: "flex",
-      marginTop: "auto",
-      columnGap: "20px",
-    },
-  };
-
   return (
     <Fragment>
       <div className="wrapper">
@@ -92,16 +53,58 @@ export default function Criteria() {
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          style={customStyles}
+          style={{
+            content: {
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              right: "auto",
+              bottom: "auto",
+              marginRight: "-50%",
+              transform: "translate(-50%, -50%)",
+              height: "230px",
+              borderRadius: "20px",
+              width: "80%",
+            },
+
+            overlay: {
+              backgroundColor: "rgba(0,0,0,0.5)",
+              boxShadow:
+                "inset -12px -12px 36px rgba(23, 140, 199, 0.12), inset 12px 12px 36px rgba(255, 255, 255, 0.5)",
+            },
+          }}
         >
-          <div style={customStyles.modalContent}>
-            <button style={customStyles.closeButton} onClick={closeModal}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+            }}
+          >
+            <button
+              style={{
+                position: "absolute",
+                top: "25px",
+                right: "20px",
+                background: "none",
+                border: "none",
+                fontSize: "large",
+                cursor: "pointer",
+              }}
+              onClick={closeModal}
+            >
               <img src={cross} alt="Fermer la fenêtre" />
             </button>
             <h2 className="modal__heading">
               Êtes-vous sûr d’effacer tous les critères ?
             </h2>
-            <div style={customStyles.buttons}>
+            <div
+              style={{
+                display: "flex",
+                marginTop: "auto",
+                columnGap: "20px",
+              }}
+            >
               <button
                 className="button button--primary button--small"
                 onClick={clearCriteria}
