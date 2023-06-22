@@ -69,7 +69,7 @@ export default function Single() {
         </div>
 
         <div className="tab-content">
-          {activeTab === "tabOne" && <Booking />}
+          {activeTab === "tabOne" && <Booking travel={travel} />}
           {activeTab === "tabTwo" && <City />}
         </div>
       </section>

@@ -24,6 +24,7 @@ import Travel from "./components/Criteria/Travel/Travel.tsx";
 import Single from "./components/Single/Single.tsx";
 
 import "./index.scss";
+import BookingSelectReturn from "./components/Single/BookingSelectReturn/BookingSelectReturn.tsx";
 
 const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
   {
     path: "/single/:id",
     element: <Single />,
+  },
+  {
+    path: "/single/:id/booking",
+    element: <BookingSelectReturn />,
   },
 ]);
 

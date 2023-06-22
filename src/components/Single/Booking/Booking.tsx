@@ -1,11 +1,14 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useUserStore } from "../../../store/useUserStore";
 import CardBooking from "../../Card/Booking/CardBooking";
 
 import "./Booking.scss";
 
-export default function Booking() {
+import { useNavigate } from "react-router-dom";
+
+export default function Booking({ travel }: any) {
   const { userCriterias } = useUserStore();
+  const navigate = useNavigate();
 
   const [currentCardOutward, setCurrentCardOutward] = useState<number | null>(
     null
@@ -13,6 +16,14 @@ export default function Booking() {
 
   const handleClick = (id: number) => {
     setCurrentCardOutward(id);
+  };
+
+  const goToSelectReturn = () => {
+    if (currentCardOutward) {
+      navigate(`../single/${travel!.id.substring(3)}/booking`, {
+        state: { travel },
+      });
+    }
   };
 
   return (
@@ -92,6 +103,7 @@ export default function Booking() {
 
         <button
           disabled={!currentCardOutward}
+          onClick={goToSelectReturn}
           className="button button--primary button--full button--absolute"
         >
           Choisir mon retour
