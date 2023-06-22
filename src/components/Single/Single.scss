@@ -22,5 +22,14 @@
       color: $bleached-cedar;
       border-bottom: 3px solid $tango;
     }
+
+    button:focus {
+      outline: none;
+      background-color: transparent;
+    }
   }
+}
+
+.tab-content {
+  margin-top: 37px;
 }
