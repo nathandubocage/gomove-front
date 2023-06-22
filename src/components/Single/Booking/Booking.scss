@@ -1,1 +1,10 @@
 @import "../../../stylesheets/variables.scss";
+
+.booking {
+  &__filters {
+  }
+
+  &__filter {
+    border: 1px solid $gray-suit;
+  }
+}
