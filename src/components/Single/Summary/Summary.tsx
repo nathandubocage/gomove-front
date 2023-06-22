@@ -3,6 +3,7 @@ import arrowLeft from "../../../assets/icons/arrow_left.svg";
 import airFrance from "../../../assets/images/airfrance.svg";
 import airPlaneMode from "../../../assets/icons/airplanemode_active.svg";
 import separator from "../../../assets/icons/separator.svg";
+import info from "../../../assets/icons/info.svg";
 
 import "./Summary.scss";
 
@@ -102,6 +103,22 @@ export default function Summary() {
 
               <div className="summary__card-price">35 €</div>
             </div>
+          </div>
+        </div>
+
+        <div className="summary__booking">
+          <h2 className="summary__title">Options de réservations</h2>
+
+          <div className="summary__box">
+            <div>
+              <span className="summary__box-title">
+                Vous devez prendre vos billets séparément
+              </span>
+              <span className="summary__box-subtitle">
+                Les voyages ne sont pas opérés par la même compagnie
+              </span>
+            </div>
+            <img src={info} alt="Information" />
           </div>
         </div>
       </section>
