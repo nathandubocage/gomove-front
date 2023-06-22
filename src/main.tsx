@@ -21,6 +21,7 @@ import Hobbies from "./components/Criteria/Hobbies/Hobbies.tsx";
 import Room from "./components/Criteria/Room/Room.tsx";
 import Weather from "./components/Criteria/Weather/Weather.tsx";
 import Travel from "./components/Criteria/Travel/Travel.tsx";
+import Single from "./components/Single/Single.tsx";
 
 import "./index.scss";
 
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
   {
     path: "/travel",
     element: <Travel />,
+  },
+  {
+    path: "/single/:id",
+    element: <Single />,
   },
 ]);
 

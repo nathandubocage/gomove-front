@@ -4,8 +4,12 @@ import TravelCard from "../TravelCard/TravelCard";
 import swipeUp from "../../assets/icons/swipe_up.svg";
 import TravelsHeader from "../TravelsHeader/TravelsHeader";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Travel() {
   const travels = useTravels();
+
+  const navigate = useNavigate();
 
   return travels.length > 0 ? (
     <div className="flex flex-col gap-8 h-screen relative">
@@ -23,7 +27,10 @@ export default function Travel() {
           <img src={swipeUp} alt="Swipe up" />
         </p>
         <div className="h-1/4 flex flex-col">
-        <Button content="Voir le bon plan" />
+          <Button
+            onClick={() => navigate("../single/1")}
+            content="Voir le bon plan"
+          />
         </div>
       </div>
     </div>
