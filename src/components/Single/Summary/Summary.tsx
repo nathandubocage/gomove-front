@@ -121,6 +121,12 @@ export default function Summary() {
             <img src={info} alt="Information" />
           </div>
         </div>
+
+        <div className="summary__actions">
+          <button className="button button--primary button--booking">
+            <img src={airFrance} /> Réserver avec Air France <span>35 €</span>
+          </button>
+        </div>
       </section>
     </div>
   );
