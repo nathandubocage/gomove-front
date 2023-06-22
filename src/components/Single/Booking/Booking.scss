@@ -22,7 +22,10 @@
 
   &__cards {
     display: flex;
-    column-gap: 12px;
+    flex-direction: column;
+    row-gap: 12px;
     margin-top: 24px;
   }
+
+  padding-bottom: 20px;
 }

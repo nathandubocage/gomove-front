@@ -1,1 +1,97 @@
 @import "../../../stylesheets/variables.scss";
+
+.card-booking {
+  display: flex;
+  column-gap: 12px;
+  justify-content: space-between;
+
+  cursor: pointer;
+  width: 100%;
+  min-height: 80px;
+  border-radius: 5px;
+  border: 1px solid $mischka;
+  background-color: $white;
+  box-shadow: -2px -2px 12px 0px rgba(137, 125, 125, 0.1) inset;
+  padding: 8px;
+
+  &__company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      color: $scarpa-flow;
+      font-size: 10px;
+      font-family: Space Grotesk;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  &__date {
+    color: $scarpa-flow;
+    font-size: 14px;
+    font-family: Space Grotesk;
+  }
+
+  &__hours {
+    color: $scarpa-flow;
+    font-size: 14px;
+    font-family: Space Grotesk;
+    font-weight: 700;
+  }
+
+  &__way {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  &__type {
+    color: $bleached-cedar;
+    font-size: 12px;
+    font-family: Space Grotesk;
+  }
+
+  &__airport {
+    color: $scarpa-flow;
+    font-size: 10px;
+    font-family: Space Grotesk;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+
+    span {
+      text-wrap: nowrap;
+
+      &:first-child {
+        font-size: 16px;
+        font-family: Space Grotesk;
+        font-weight: 700;
+        color: $christi;
+      }
+
+      &:last-child {
+        font-size: 10px;
+        font-family: Space Grotesk;
+        color: $christi;
+      }
+    }
+  }
+}
