@@ -13,11 +13,10 @@ import getCountryFlagEmoji from "../../utils/get-country-flag";
 export default function Single() {
   const location = useLocation();
   const travel: TTravel = location.state.travel;
-
   const [activeTab, setActiveTab] = useState("tabOne");
 
   return (
-    <Fragment>
+    <div className="wrapper-flex">
       <header
         style={{
           backgroundImage: `linear-gradient(
@@ -74,6 +73,6 @@ export default function Single() {
           {activeTab === "tabTwo" && <City />}
         </div>
       </section>
-    </Fragment>
+    </div>
   );
 }

@@ -5,6 +5,11 @@
   column-gap: 12px;
   justify-content: space-between;
 
+  &--selected {
+    border: 2px solid var(--orange, #ed6c16);
+    background: rgba(237, 108, 22, 0.2);
+  }
+
   cursor: pointer;
   width: 100%;
   min-height: 80px;
@@ -30,6 +35,7 @@
       color: $scarpa-flow;
       font-size: 10px;
       font-family: Space Grotesk;
+      text-align: center;
     }
   }
 
