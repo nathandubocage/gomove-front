@@ -9,7 +9,6 @@ import arrowLeft from "../../assets/icons/arrow_left.svg";
 import backgroundSingle from "../../assets/fake/berlin_single.png";
 
 import "./Single.scss";
-import TravelsHeader from "../TravelsHeader/TravelsHeader";
 
 export default function Single() {
   const { id: number } = useParams();

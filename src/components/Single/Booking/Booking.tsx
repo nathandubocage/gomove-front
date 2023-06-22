@@ -57,9 +57,9 @@ export default function Booking() {
         <div className="outward__cards">
           <CardBooking />
           <CardBooking />
-          <CardBooking />
-          <CardBooking />
-          <CardBooking />
+          {/* <CardBooking /> */}
+          {/* <CardBooking /> */}
+          {/* <CardBooking /> */}
         </div>
       </div>
     </Fragment>
