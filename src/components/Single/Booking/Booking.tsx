@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { useUserStore } from "../../../store/useUserStore";
+import CardBooking from "../../Card/Booking/CardBooking";
 
 import "./Booking.scss";
 
@@ -52,6 +53,14 @@ export default function Booking() {
 
       <div className="outward">
         <h2 className="outward__title">Choisissez votre aller</h2>
+
+        <div className="outward__cards">
+          <CardBooking />
+          <CardBooking />
+          <CardBooking />
+          <CardBooking />
+          <CardBooking />
+        </div>
       </div>
     </Fragment>
   );

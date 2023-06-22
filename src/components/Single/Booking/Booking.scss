@@ -19,4 +19,10 @@
     font-family: Space Grotesk;
     font-weight: 700;
   }
+
+  &__cards {
+    display: flex;
+    column-gap: 12px;
+    margin-top: 24px;
+  }
 }
