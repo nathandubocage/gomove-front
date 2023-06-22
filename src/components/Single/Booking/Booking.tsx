@@ -57,10 +57,11 @@ export default function Booking() {
         <div className="outward__cards">
           <CardBooking />
           <CardBooking />
-          {/* <CardBooking /> */}
-          {/* <CardBooking /> */}
-          {/* <CardBooking /> */}
         </div>
+
+        <button className="button button--primary button--full">
+          Choisir mon retour
+        </button>
       </div>
     </Fragment>
   );
