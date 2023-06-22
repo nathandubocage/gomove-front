@@ -12,13 +12,11 @@ import "./Single.scss";
 
 export default function Single() {
   const { id: number } = useParams();
-
   const navigate = useNavigate();
-
   const [activeTab, setActiveTab] = useState("tabOne");
 
   return (
-    <Fragment>
+    <div className="wrapper-flex">
       <header
         style={{ backgroundImage: `url(${backgroundSingle})` }}
         className="header header--sized"
@@ -64,6 +62,6 @@ export default function Single() {
           {activeTab === "tabTwo" && <City />}
         </div>
       </section>
-    </Fragment>
+    </div>
   );
 }

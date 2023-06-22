@@ -1,14 +1,23 @@
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 
 import "./CardBooking.scss";
 
 import airFrance from "../../../assets/images/airfrance.svg";
 import airPlaneMode from "../../../assets/icons/airplanemode_active.svg";
 
-export default function CardBooking() {
+interface CardBookingProps {
+  id: number;
+  onClick: (id: number) => void;
+  isSelected: boolean;
+}
+
+const CardBooking: FC<CardBookingProps> = ({ id, onClick, isSelected }) => {
   return (
     <Fragment>
-      <div className="card-booking">
+      <div
+        className={`card-booking ${isSelected ? "card-booking--selected" : ""}`}
+        onClick={() => onClick(id)}
+      >
         <div className="card-booking__company">
           <img src={airFrance} alt="Air France" />
           <span>Air France</span>
@@ -31,4 +40,6 @@ export default function CardBooking() {
       </div>
     </Fragment>
   );
-}
+};
+
+export default CardBooking;
