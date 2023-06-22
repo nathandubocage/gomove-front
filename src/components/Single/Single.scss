@@ -3,4 +3,24 @@
 .single {
   margin-top: 24px;
   padding: 0 20px;
+
+  &__tabs {
+    display: flex;
+  }
+
+  &__tab {
+    flex: 1;
+
+    color: $mobster;
+    font-size: 16px;
+    font-family: Space Grotesk;
+    font-weight: 700;
+
+    padding-bottom: 20px;
+
+    &--active {
+      color: $bleached-cedar;
+      border-bottom: 3px solid $tango;
+    }
+  }
 }

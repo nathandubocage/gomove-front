@@ -36,14 +36,32 @@ export default function Single() {
       </header>
 
       <section className="single">
-        <div className="tabs">
-          <button onClick={() => setActiveTab("tabOne")}>Onglet 1</button>
-          <button onClick={() => setActiveTab("tabTwo")}>Onglet 2</button>
+        <div className="single__tabs">
+          <button
+            className={
+              activeTab === "tabOne"
+                ? "single__tab single__tab--active"
+                : "single__tab"
+            }
+            onClick={() => setActiveTab("tabOne")}
+          >
+            Réservation
+          </button>
+          <button
+            className={
+              activeTab === "tabTwo"
+                ? "single__tab single__tab--active"
+                : "single__tab"
+            }
+            onClick={() => setActiveTab("tabTwo")}
+          >
+            La ville
+          </button>
         </div>
 
         <div className="tab-content">
-          {activeTab === "tab1" && <Booking />}
-          {activeTab === "tab2" && <City />}
+          {activeTab === "tabOne" && <Booking />}
+          {activeTab === "tabTwo" && <City />}
         </div>
       </section>
     </Fragment>
