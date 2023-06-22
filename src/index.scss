@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import "./stylesheets/variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @font-face {
   font-family: "Integral CF";
@@ -54,12 +54,19 @@
 .header {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 30px 0;
 
   &--single {
     padding: 54px 0;
+  }
+
+  &--sized {
+    display: flex;
+    align-items: start;
+    background-size: cover;
+    min-height: 230px;
+    padding: 0 20px;
   }
 
   &--account {
@@ -68,7 +75,6 @@
 
   &__back {
     position: absolute;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,6 +82,12 @@
     height: 48px;
     border: 1px solid $gray-suit;
     border-radius: 5px;
+
+    &--single {
+      left: 20px;
+      top: 40px;
+      background-color: $white;
+    }
   }
 
   &__logo {
