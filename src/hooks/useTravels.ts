@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import travelRepository from "../repositories/travelRepository";
+// import travelRepository from "../repositories/travelRepository";
 import { TTravel } from "../types/travel.spec";
 
 function useTravels(): TTravel[] {
@@ -8,15 +8,15 @@ function useTravels(): TTravel[] {
   const getTravels = async () => {
     try {
       // TO DO: Rendre les paramètres dynamiques
-      const travelParams = {
-        nbPassagers: "1",
-        priceRange: "500",
-        departurePlace: "/m/0d8r8",
-        startDate: "2023-06-30",
-        endDate: "2023-07-03",
-        nbStopovers: "0",
-        duration: "weekend",
-      };
+    //   const travelParams = {
+    //     nbPassagers: "1",
+    //     priceRange: "500",
+    //     departurePlace: "/m/0d8r8",
+    //     startDate: "2023-06-30",
+    //     endDate: "2023-07-03",
+    //     nbStopovers: "0",
+    //     duration: "weekend",
+    //   };
 
       // const response = await travelRepository.getTravels(travelParams);
       // setTravels(response.data);
