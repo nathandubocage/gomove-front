@@ -22,9 +22,10 @@ import Room from "./components/Criteria/Room/Room.tsx";
 import Weather from "./components/Criteria/Weather/Weather.tsx";
 import Travel from "./components/Criteria/Travel/Travel.tsx";
 import Single from "./components/Single/Single.tsx";
+import BookingSelectReturn from "./components/Single/BookingSelectReturn/BookingSelectReturn.tsx";
+import Summary from "./components/Single/Summary/Summary.tsx";
 
 import "./index.scss";
-import BookingSelectReturn from "./components/Single/BookingSelectReturn/BookingSelectReturn.tsx";
 
 const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
   {
     path: "/single/:id/booking",
     element: <BookingSelectReturn />,
+  },
+  {
+    path: "/single/:id/summary",
+    element: <Summary />,
   },
 ]);
 

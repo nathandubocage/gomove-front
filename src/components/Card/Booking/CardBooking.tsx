@@ -8,7 +8,7 @@ import airPlaneMode from "../../../assets/icons/airplanemode_active.svg";
 interface CardBookingProps {
   id: number;
   onClick: (id: number) => void;
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 const CardBooking: FC<CardBookingProps> = ({ id, onClick, isSelected }) => {

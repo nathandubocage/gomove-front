@@ -1,0 +1,98 @@
+@import "../../../stylesheets/variables.scss";
+
+.summary {
+  &__title {
+    color: $bleached-cedar;
+    font-size: 20px;
+    font-family: Space Grotesk;
+    font-weight: 700;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 24px;
+  }
+
+  &__card {
+    border-radius: 5px;
+    border: 1px solid $mischka;
+    padding: 12px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid $gray-suit;
+    }
+
+    &-date {
+      color: $bleached-cedar;
+      font-size: 14px;
+      font-family: Space Grotesk;
+    }
+
+    &-details {
+      display: flex;
+      column-gap: 8px;
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    &-price {
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-separator {
+      height: 105px;
+    }
+
+    &-first {
+      display: flex;
+      column-gap: 14px;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-hour {
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-airport {
+      color: $mobster;
+      font-size: 12px;
+      font-family: Space Grotesk;
+    }
+
+    &-duration {
+      color: $mobster;
+      font-size: 10px;
+      font-family: Space Grotesk;
+    }
+  }
+}
