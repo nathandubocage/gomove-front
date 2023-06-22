@@ -49,6 +49,10 @@ export default function Booking() {
           </p>
         </a>
       </div>
+
+      <div className="outward">
+        <h2 className="outward__title">Choisissez votre aller</h2>
+      </div>
     </Fragment>
   );
 }

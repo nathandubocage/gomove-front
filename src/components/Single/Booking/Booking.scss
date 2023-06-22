@@ -8,3 +8,15 @@
     border: 1px solid $gray-suit;
   }
 }
+
+.outward {
+  margin-top: 24px;
+
+  &__title {
+    color: $bleached-cedar;
+
+    font-size: 20px;
+    font-family: Space Grotesk;
+    font-weight: 700;
+  }
+}
