@@ -15,7 +15,6 @@ const travelRepository = {
         }`
       );
       const response = await httpCall.json();
-      console.log(response);
       return { data: response, error: undefined };
     } catch (error) {
       console.error(error);
@@ -25,16 +24,19 @@ const travelRepository = {
   async getFlights(flightParams: IFlightParams) {
     try {
       const httpCall = await fetch(
-        `${import.meta.env.VITE_API_URL}/travels/flights?nbPassagers=${flightParams.nbPassagers}&departurePlace=${flightParams.departurePlace}&travelPlace=${flightParams.travelPlace}&startDate=${flightParams.startDate}&endDate=${flightParams.endDate}`
+        `${import.meta.env.VITE_API_URL}/travels/flights?nbPassagers=${
+          flightParams.nbPassagers
+        }&departurePlace=${flightParams.departurePlace}&travelPlace=${
+          flightParams.travelPlace
+        }&startDate=${flightParams.startDate}&endDate=${flightParams.endDate}`
       );
       const response = await httpCall.json();
-      console.log(response);
       return { data: response, error: undefined };
     } catch (error) {
       console.error(error);
       return { data: undefined, error: error };
     }
-  }
+  },
 };
 
 export default travelRepository;

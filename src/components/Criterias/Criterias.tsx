@@ -120,7 +120,7 @@ export default function Criterias() {
     if (step < 4) {
       nextStep();
     } else {
-      console.log("Valider mes critères");
+      null;
     }
   };
 

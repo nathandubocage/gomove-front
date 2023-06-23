@@ -95,9 +95,7 @@ export default function Answers() {
     if (step < 3) {
       nextStep();
     } else {
-      console.log("Valider mon profil");
-      console.log(country);
-      console.log(continent);
+      null;
     }
   };
 

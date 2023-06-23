@@ -12,7 +12,7 @@ import arrowLeft from "../../assets/icons/arrow_left.svg";
 
 export default function Login() {
   const handleSwitch = (checked: boolean) => {
-    console.log(checked);
+    null;
   };
 
   return (
@@ -48,8 +48,7 @@ export default function Login() {
                 placeholder="Votre adresse e-mail"
                 value=""
                 onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur de l'e-mail");
+                  null;
                 }}
               />
             </div>
@@ -64,9 +63,8 @@ export default function Login() {
                 type="password"
                 placeholder="Votre mot de passe"
                 value=""
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur du mot de passe");
+                onChange={() => {
+                  null;
                 }}
               />
             </div>

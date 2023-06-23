@@ -49,8 +49,7 @@ const Passengers = () => {
           <button
             className="button button--primary"
             onClick={() => {
-              setUserCriterias({ ...userCriterias!, passengers: passengers});
-              console.log(userCriterias);
+              setUserCriterias({ ...userCriterias!, passengers: passengers });
               navigate("/");
             }}
           >
