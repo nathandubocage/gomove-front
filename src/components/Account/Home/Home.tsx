@@ -28,7 +28,10 @@ export default function Home() {
     <Fragment>
       <div className="wrapper-single">
         <header className="header header--account">
-          <button className="header__back" onClick={() => navigate("/")}>
+          <button
+            className="header__back"
+            onClick={() => window.history.back()}
+          >
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -37,19 +40,11 @@ export default function Home() {
           </button>
 
           <div className="header__actions">
-            <button>
+            <button onClick={() => navigate("/")}>
               <img
                 src={logout}
                 alt="Se déconnecter"
                 className="header__logout"
-              />
-            </button>
-
-            <button>
-              <img
-                src={settings}
-                alt="Paramètres du compte"
-                className="header__settings"
               />
             </button>
           </div>
@@ -95,21 +90,33 @@ export default function Home() {
                   navigate("/passengers");
                 }}
                 title="Voyageurs"
-                subtitle={userCriterias?.passengers ? String(userCriterias?.passengers!) : "Non défini"}
+                subtitle={
+                  userCriterias?.passengers
+                    ? String(userCriterias?.passengers!)
+                    : "Non défini"
+                }
               />
               <CardSetting
                 onClick={() => {
                   navigate("/price");
                 }}
                 title="Budget"
-                subtitle={userCriterias?.budget ? String(userCriterias?.budget) : "Non défini"}
+                subtitle={
+                  userCriterias?.budget
+                    ? String(userCriterias?.budget)
+                    : "Non défini"
+                }
               />
               <CardSetting
                 onClick={() => {
                   navigate("/destination");
                 }}
                 title="Destination"
-                subtitle={userCriterias?.destination ? userCriterias?.destination : "Non défini"}
+                subtitle={
+                  userCriterias?.destination
+                    ? userCriterias?.destination
+                    : "Non défini"
+                }
               />
             </div>
           </div>
@@ -138,8 +145,6 @@ export default function Home() {
               <CardBookmark {...favourite} />
             </SwiperSlide>
           ))}
-         
-          
         </Swiper>
       </section>
     </Fragment>

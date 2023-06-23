@@ -30,11 +30,11 @@ import "./index.scss";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Welcome />,
   },
   {
-    path: "/welcome",
-    element: <Welcome />,
+    path: "/travels",
+    element: <App />,
   },
   {
     path: "/login",

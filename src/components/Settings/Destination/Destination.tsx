@@ -95,7 +95,7 @@ const Destination = () => {
             className="button button--primary"
             onClick={() => {
               setUserCriterias({ ...userCriterias!, destination: continent! });
-              navigate("/");
+              navigate("/travels");
             }}
           >
             Confirmer

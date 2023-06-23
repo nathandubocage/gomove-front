@@ -42,7 +42,7 @@ function useRegister() {
     const response = await httpCall.json();
 
     if (httpCall.status === 201) {
-      navigate("/");
+      navigate("/answers");
     }
   };
 

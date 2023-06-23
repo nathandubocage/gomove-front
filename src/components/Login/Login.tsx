@@ -9,8 +9,11 @@ import "./Login.scss";
 
 import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const handleSwitch = (checked: boolean) => {
     null;
   };
@@ -80,7 +83,7 @@ export default function Login() {
             </div>
           </form>
 
-          <Button onClick={() => null} content="Se connecter" />
+          <Button onClick={() => navigate("/travels")} content="Se connecter" />
         </section>
       </div>
     </Fragment>

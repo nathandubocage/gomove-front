@@ -63,7 +63,7 @@ const TravelDate = () => {
                 ...userCriterias!,
                 departureDate: dateTravel,
               });
-              navigate("/");
+              navigate("/travels");
             }}
           >
             Confirmer

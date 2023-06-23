@@ -47,7 +47,7 @@ const Price = () => {
             className="button button--primary"
             onClick={() => {
               setUserCriterias({ ...userCriterias!, budget: price });
-              navigate("/");
+              navigate("/travels");
             }}
           >
             Confirmer

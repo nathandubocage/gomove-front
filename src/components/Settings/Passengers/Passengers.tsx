@@ -50,7 +50,7 @@ const Passengers = () => {
             className="button button--primary"
             onClick={() => {
               setUserCriterias({ ...userCriterias!, passengers: passengers });
-              navigate("/");
+              navigate("/travels");
             }}
           >
             Confirmer
