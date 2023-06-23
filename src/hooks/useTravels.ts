@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import travelRepository from "../repositories/travelRepository";
 import { TTravel } from "../types/travel.spec";
 import { useUserStore } from "../store/useUserStore";

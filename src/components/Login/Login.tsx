@@ -15,7 +15,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleSwitch = (checked: boolean) => {
-    null;
+    console.log(checked);
   };
 
   return (
@@ -51,7 +51,7 @@ export default function Login() {
                 placeholder="Votre adresse e-mail"
                 value=""
                 onChange={(event) => {
-                  null;
+                  console.log(event);
                 }}
               />
             </div>

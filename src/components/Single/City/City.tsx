@@ -5,23 +5,22 @@ import rainyIcon from "../../../assets/icons/weather/rainy.svg";
 import "./City.scss";
 import Button from "../../Button/Button";
 import { TTravel } from "../../../types/travel.spec";
-import { useEffect, useState } from "react";
 
-interface WeatherData {
-  location: {
-    values: Array<{
-      datetime: string;
-      temp: number;
-    }>;
-  };
-}
+// interface WeatherData {
+//   location: {
+//     values: Array<{
+//       datetime: string;
+//       temp: number;
+//     }>;
+//   };
+// }
 
-interface MonthlyData {
-  [key: string]: {
-    temp: number;
-    count: number;
-  };
-}
+// interface MonthlyData {
+//   [key: string]: {
+//     temp: number;
+//     count: number;
+//   };
+// }
 
 export default function City(travel: TTravel) {
   // const [monthlyData, setMonthlyData] = useState<Array<number | undefined>>([]);

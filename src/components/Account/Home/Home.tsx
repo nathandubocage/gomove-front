@@ -12,7 +12,6 @@ import "./Home.scss";
 
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
 import logout from "../../../assets/icons/logout.svg";
-import settings from "../../../assets/icons/settings.svg";
 import criteria from "../../../assets/icons/criteria.svg";
 import user from "../../../assets/icons/user.svg";
 import heart from "../../../assets/icons/heart.svg";

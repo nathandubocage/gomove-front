@@ -29,7 +29,7 @@ export default function Booking(travel: TTravel) {
 
   const goToSelectReturn = () => {
     if (currentCardOutward) {
-      navigate(`../single/${travel!.id.substring(3)}/booking`, {
+      navigate(`../single/${travel?.id?.substring(3)}/booking`, {
         state: { travel },
       });
     }

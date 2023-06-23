@@ -5,14 +5,12 @@ import getCountryFlagEmoji from "../../../utils/get-country-flag";
 
 import "./BookingSelectReturn.scss";
 import CardBooking from "../../Card/Booking/CardBooking";
-import { useUserStore } from "../../../store/useUserStore";
 import { useState } from "react";
 
 export default function BookingSelectReturn() {
   const location = useLocation();
   const travel: TTravel = location.state.travel;
 
-  const { userCriterias } = useUserStore();
   const navigate = useNavigate();
 
   const [currentCardReturn, setCurrentCardReturn] = useState<number | null>(
@@ -25,7 +23,7 @@ export default function BookingSelectReturn() {
 
   const goToSummary = () => {
     if (currentCardReturn) {
-      navigate(`../single/${travel!.id.substring(3)}/summary`, {
+      navigate(`../single/${travel?.id?.substring(3)}/summary`, {
         state: { travel, currentCardReturn },
       });
     }
@@ -56,7 +54,7 @@ export default function BookingSelectReturn() {
 
         <h2 className="my-4 font-integral-cf font-bold text-4xl">
           {travel.destination.city}{" "}
-          {getCountryFlagEmoji(travel.destination.country)}
+          {getCountryFlagEmoji(travel.destination.country as string)}
         </h2>
       </header>
 
