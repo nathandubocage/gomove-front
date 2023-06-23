@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { TUser, TUserCriterias, TUserFavourites } from "../types/user.spec";
+
 import { TTravel } from "../types/travel.spec";
 
 interface TravelsState {

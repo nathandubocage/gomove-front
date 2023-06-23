@@ -39,7 +39,7 @@ function useRegister() {
       `${import.meta.env.VITE_API_URL}/auth/sign-up`,
       requestOptions
     );
-    const response = await httpCall.json();
+    // const response = await httpCall.json();
 
     if (httpCall.status === 201) {
       navigate("/answers");
