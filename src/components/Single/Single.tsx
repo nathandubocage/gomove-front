@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import Booking from "./Booking/Booking";
+// import Booking from "./Booking/Booking";
 import City from "./City/City";
 
 import arrowLeft from "../../assets/icons/arrow_left.svg";
