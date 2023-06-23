@@ -5,13 +5,23 @@ import arrows from "../../../assets/icons/arrows.svg";
 import { TTravel } from "../../../types/travel.spec";
 import getCountryFlagEmoji from "../../../utils/get-country-flag";
 import { useUserStore } from "../../../store/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 type TCardBookmarkProps = TTravel;
 
 export default function CardBookmark(cardBookmarkProps: TCardBookmarkProps) {
   const { removeUserFavourite } = useUserStore();
+  const navigate = useNavigate();
+
   return (
-    <div className="card-bookmark">
+    <div
+      className="card-bookmark"
+      onClick={() => {
+        navigate(`../single/${cardBookmarkProps?.id!.substring(3)}`, {
+          state: { travel: cardBookmarkProps },
+        });
+      }}
+    >
       <img
         src={cardBookmarkProps.destination.image}
         alt="Ville de Berlin"

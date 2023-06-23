@@ -73,7 +73,7 @@ export default function Home() {
             <div className="account__profil-cards">
               <CardSetting
                 onClick={() => {
-                  navigate("/location");
+                  null;
                 }}
                 title="Localisation"
                 subtitle="Lille"
