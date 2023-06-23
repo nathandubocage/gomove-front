@@ -19,7 +19,14 @@ const useUserStore = create<UserState>()(
     (set) => ({
       user: null,
       userFavourites: [],
-      userCriterias: null,
+      userCriterias: {
+        departureDate: null,
+        returnDate: null,
+        departureCity: "Lille",
+        passengers: 2,
+        destination: "Europe",
+        budget: 300,
+      },
       setUser: (user) => set(() => ({ user })),
       addUserFavourite(favourite) {
         set((state) => ({

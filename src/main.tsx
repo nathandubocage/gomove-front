@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -22,18 +21,19 @@ import Room from "./components/Criteria/Room/Room.tsx";
 import Weather from "./components/Criteria/Weather/Weather.tsx";
 import Travel from "./components/Criteria/Travel/Travel.tsx";
 import Single from "./components/Single/Single.tsx";
+import BookingSelectReturn from "./components/Single/BookingSelectReturn/BookingSelectReturn.tsx";
+import Summary from "./components/Single/Summary/Summary.tsx";
 
 import "./index.scss";
-import BookingSelectReturn from "./components/Single/BookingSelectReturn/BookingSelectReturn.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Welcome />,
   },
   {
-    path: "/welcome",
-    element: <Welcome />,
+    path: "/travels",
+    element: <App />,
   },
   {
     path: "/login",
@@ -107,10 +107,14 @@ const router = createBrowserRouter([
     path: "/single/:id/booking",
     element: <BookingSelectReturn />,
   },
+  {
+    path: "/single/:id/summary",
+    element: <Summary />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </>
 );

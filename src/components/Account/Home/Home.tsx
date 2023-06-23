@@ -12,7 +12,6 @@ import "./Home.scss";
 
 import arrowLeft from "../../../assets/icons/arrow_left.svg";
 import logout from "../../../assets/icons/logout.svg";
-import settings from "../../../assets/icons/settings.svg";
 import criteria from "../../../assets/icons/criteria.svg";
 import user from "../../../assets/icons/user.svg";
 import heart from "../../../assets/icons/heart.svg";
@@ -28,7 +27,10 @@ export default function Home() {
     <Fragment>
       <div className="wrapper-single">
         <header className="header header--account">
-          <button className="header__back" onClick={() => navigate("/")}>
+          <button
+            className="header__back"
+            onClick={() => window.history.back()}
+          >
             <img
               src={arrowLeft}
               alt="Retourner en arrière"
@@ -37,19 +39,11 @@ export default function Home() {
           </button>
 
           <div className="header__actions">
-            <button>
+            <button onClick={() => navigate("/")}>
               <img
                 src={logout}
                 alt="Se déconnecter"
                 className="header__logout"
-              />
-            </button>
-
-            <button>
-              <img
-                src={settings}
-                alt="Paramètres du compte"
-                className="header__settings"
               />
             </button>
           </div>
@@ -78,38 +72,50 @@ export default function Home() {
             <div className="account__profil-cards">
               <CardSetting
                 onClick={() => {
-                  navigate("/location");
+                  null;
                 }}
                 title="Localisation"
-                subtitle="Paris"
+                subtitle="Lille"
               />
               <CardSetting
                 onClick={() => {
                   navigate("/travel-date");
                 }}
                 title="Dates"
-                subtitle={userCriterias?.departureDate || "-"}
+                subtitle={userCriterias?.departureDate || "Flexible"}
               />
               <CardSetting
                 onClick={() => {
                   navigate("/passengers");
                 }}
                 title="Voyageurs"
-                subtitle={String(userCriterias?.passengers!)}
+                subtitle={
+                  userCriterias?.passengers
+                    ? String(userCriterias?.passengers!)
+                    : "Non défini"
+                }
               />
               <CardSetting
                 onClick={() => {
                   navigate("/price");
                 }}
                 title="Budget"
-                subtitle={String(userCriterias?.budget!)}
+                subtitle={
+                  userCriterias?.budget
+                    ? String(userCriterias?.budget)
+                    : "Non défini"
+                }
               />
               <CardSetting
                 onClick={() => {
                   navigate("/destination");
                 }}
                 title="Destination"
-                subtitle={userCriterias?.destination!}
+                subtitle={
+                  userCriterias?.destination
+                    ? userCriterias?.destination
+                    : "Non défini"
+                }
               />
             </div>
           </div>
@@ -138,8 +144,6 @@ export default function Home() {
               <CardBookmark {...favourite} />
             </SwiperSlide>
           ))}
-         
-          
         </Swiper>
       </section>
     </Fragment>

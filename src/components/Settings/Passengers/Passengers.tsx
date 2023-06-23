@@ -7,14 +7,17 @@ import arrowLeft from "../../../assets/icons/arrow_left.svg";
 
 import "./Passengers.scss";
 import { useUserStore } from "../../../store/useUserStore";
+import { useNavigate } from "react-router-dom";
 
 const Passengers = () => {
   const { userCriterias, setUserCriterias } = useUserStore();
-  const [passengers, setPassengers] = useState(userCriterias?.passengers || 1);
+  const [passengers, setPassengers] = useState(userCriterias?.passengers || 2);
 
   const handlePassengersChange = (value: number) => {
     setPassengers(value);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="wrapper">
@@ -45,9 +48,10 @@ const Passengers = () => {
         <div className="answers__progress">
           <button
             className="button button--primary"
-            onClick={() =>
-              setUserCriterias({ ...userCriterias!, passengers: passengers })
-            }
+            onClick={() => {
+              setUserCriterias({ ...userCriterias!, passengers: passengers });
+              navigate("/travels");
+            }}
           >
             Confirmer
           </button>

@@ -1,0 +1,141 @@
+@import "../../../stylesheets/variables.scss";
+
+.summary {
+  &__title {
+    color: $bleached-cedar;
+    font-size: 20px;
+    font-family: Space Grotesk;
+    font-weight: 700;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 24px;
+  }
+
+  &__card {
+    border-radius: 5px;
+    border: 1px solid $mischka;
+    padding: 12px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid $gray-suit;
+    }
+
+    &-date {
+      color: $bleached-cedar;
+      font-size: 14px;
+      font-family: Space Grotesk;
+    }
+
+    &-details {
+      display: flex;
+      column-gap: 8px;
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    &-price {
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-separator {
+      height: 105px;
+    }
+
+    &-first {
+      display: flex;
+      column-gap: 14px;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-hour {
+      color: $bleached-cedar;
+      font-size: 16px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-airport {
+      color: $mobster;
+      font-size: 12px;
+      font-family: Space Grotesk;
+    }
+
+    &-duration {
+      color: $mobster;
+      font-size: 10px;
+      font-family: Space Grotesk;
+    }
+  }
+
+  &__booking {
+    margin-top: 24px;
+  }
+
+  &__box {
+    border-radius: 5px;
+    border-left: 2px solid #0a92de;
+    background: #bee8ff;
+    box-shadow: -2px -2px 12px 0px rgba(137, 125, 125, 0.1) inset;
+    margin-top: 24px;
+    padding: 12px;
+
+    display: flex;
+    column-gap: 12px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+
+    &-title {
+      color: $mobster;
+      font-size: 14px;
+      font-family: Space Grotesk;
+      font-weight: 700;
+    }
+
+    &-subtitle {
+      color: $bleached-cedar;
+      font-size: 12px;
+      font-family: Space Grotesk;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+  }
+
+  padding-bottom: 20px;
+}

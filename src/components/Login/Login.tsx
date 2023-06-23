@@ -9,8 +9,11 @@ import "./Login.scss";
 
 import logoHeader from "../../assets/images/logo_header.svg";
 import arrowLeft from "../../assets/icons/arrow_left.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const handleSwitch = (checked: boolean) => {
     console.log(checked);
   };
@@ -49,7 +52,6 @@ export default function Login() {
                 value=""
                 onChange={(event) => {
                   console.log(event);
-                  console.log("Changement de valeur de l'e-mail");
                 }}
               />
             </div>
@@ -64,9 +66,8 @@ export default function Login() {
                 type="password"
                 placeholder="Votre mot de passe"
                 value=""
-                onChange={(event) => {
-                  console.log(event);
-                  console.log("Changement de valeur du mot de passe");
+                onChange={() => {
+                  null;
                 }}
               />
             </div>
@@ -82,7 +83,7 @@ export default function Login() {
             </div>
           </form>
 
-          <Button onClick={() => null} content="Se connecter" />
+          <Button onClick={() => navigate("/travels")} content="Se connecter" />
         </section>
       </div>
     </Fragment>

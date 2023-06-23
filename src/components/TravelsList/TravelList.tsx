@@ -18,7 +18,7 @@ export default function Travel() {
     setTravel(travel);
   };
 
-  return travels.length > 0 ? (
+  return travels ? (
     <div className="flex flex-col gap-8 h-screen relative">
       <TravelsHeader />
       <div className="h-full w-full snap-mandatory snap-y overflow-y-scroll">
@@ -35,7 +35,7 @@ export default function Travel() {
         </p>
         <div className="h-1/4 flex flex-col">
           <Button
-            onClick={() => navigate(`../single/${travel!.id.substring(3)}`, { state: { travel } })}
+            onClick={() => navigate(`../single/${travel?.id!.substring(3)}`, { state: { travel } })}
             content="Voir le bon plan"
           />
         </div>

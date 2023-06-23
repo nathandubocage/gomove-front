@@ -6,8 +6,11 @@ import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 
 import "./Introduction.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Introduction() {
+  const navigate = useNavigate();
+
   return (
     <Fragment>
       <div className="wrapper">
@@ -37,7 +40,7 @@ export default function Introduction() {
             recherche plus tard
           </p>
 
-          <Button onClick={() => null} content="Continuer" />
+          <Button onClick={() => navigate("/answers")} content="Continuer" />
         </section>
       </div>
     </Fragment>

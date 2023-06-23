@@ -1,4 +1,4 @@
-export type TTravelParams = {
+export interface ITravelParams {
   nbPassagers: string | null;
   priceRange: string | null;
   departurePlace: string | null;
@@ -6,25 +6,60 @@ export type TTravelParams = {
   endDate: string | null;
   nbStopovers: string | null;
   duration: string | null;
-};
+}
+
+export interface IFlightParams {
+  nbPassagers: string | null;
+  departurePlace: string | null;
+  travelPlace: string | null;
+  startDate: string | null;
+  endDate: string | null;
+}
 
 export type TTravel = {
-  id: string;
+  id: string | null;
   destination: {
-    city: string;
-    country: string;
-    image: string;
-    distance: string;
+    city: string | null;
+    country: string | null;
+    image: string | null;
+    distance: string | null;
   };
   date: {
-    start: string;
-    end: string;
+    start: string | null;
+    end: string | null;
   };
-  transport: [
-    {
-      price: number;
-      company: string;
-      airport: string;
-    }
-  ];
+  transport:
+    | [
+        {
+          price: number | null;
+          company: string | null;
+          airport: string | null;
+        }
+      ]
+    | [];
+};
+
+export type TFlights = {
+  compagny: {
+    id: string;
+    name: string;
+  };
+  from: {
+    airport: string;
+    label: string;
+  };
+  to: {
+    airport: string;
+    label: string;
+  };
+  duration: number;
+  date: string;
+  price: number;
+};
+
+export type TCultural = {
+  id: string;
+  city: string;
+  place: string;
+  image: string;
 };

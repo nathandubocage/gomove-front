@@ -19,17 +19,17 @@ function useRegister() {
       return;
     }
 
-    var myHeaders = new Headers();
+    const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({
+    const raw = JSON.stringify({
       email: registerProps.email,
       name: registerProps.name,
       phone: registerProps.phone,
       password: registerProps.password,
     });
 
-    var requestOptions = {
+    const requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: raw,
@@ -40,10 +40,9 @@ function useRegister() {
       requestOptions
     );
     const response = await httpCall.json();
-    console.log(response);
 
     if (httpCall.status === 201) {
-      navigate("/");
+      navigate("/answers");
     }
   };
 

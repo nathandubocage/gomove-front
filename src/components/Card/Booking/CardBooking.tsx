@@ -1,17 +1,18 @@
 import { FC, Fragment } from "react";
 
 import "./CardBooking.scss";
-
-import airFrance from "../../../assets/images/airfrance.svg";
 import airPlaneMode from "../../../assets/icons/airplanemode_active.svg";
+import { TFlights } from "../../../types/travel.spec";
+import getHoursFromMinutes from "../../../utils/get-hours-from-minutes";
 
 interface CardBookingProps {
   id: number;
   onClick: (id: number) => void;
-  isSelected: boolean;
+  flight?: TFlights;
+  isSelected?: boolean;
 }
 
-const CardBooking: FC<CardBookingProps> = ({ id, onClick, isSelected }) => {
+const CardBooking: FC<CardBookingProps> = ({ id, onClick, flight, isSelected }) => {
   return (
     <Fragment>
       <div
@@ -19,22 +20,22 @@ const CardBooking: FC<CardBookingProps> = ({ id, onClick, isSelected }) => {
         onClick={() => onClick(id)}
       >
         <div className="card-booking__company">
-          <img src={airFrance} alt="Air France" />
-          <span>Air France</span>
+          <img src={`https://www.gstatic.com/flights/airline_logos/70px/dark/${flight?.compagny.id}.png`} alt="Air France" />
+          <span>{flight?.compagny.name}</span>
         </div>
         <div className="card-booking__details">
           <span className="card-booking__date">
-            12 Juin 2023 / 21:30- 23:00
+            {flight?.date}
           </span>
-          <span className="card-booking__hours"> 1 h 30 min</span>
+          <span className="card-booking__hours">{getHoursFromMinutes(flight?.duration!)}</span>
           <div className="card-booking__way">
             <img src={airPlaneMode} alt="Avion" />
             <div className="card-booking__type">Avion</div>
-            <span className="card-booking__airport">ORL - BER</span>
+            <span className="card-booking__airport">{flight?.from.label} - {flight?.to.label}</span>
           </div>
         </div>
         <div className="card-booking__price">
-          <span>35 €</span>
+          <span>{flight?.price} €</span>
           <span>Meilleure option</span>
         </div>
       </div>

@@ -43,6 +43,20 @@
     margin-top: 20px;
   }
 
+  &--booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
   }
